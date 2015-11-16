@@ -1,7 +1,7 @@
 {
-  "name": "lb-ngIonic",
-  "description": "Start a new ionic project with LoopBack backend in seconds !",
-  "version": "0.0.1",
+  "name": "DekutAPP",
+  "description": "Student Compnion App For Dedan Kimathi University",
+  "version": "2.1.0",
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.3",

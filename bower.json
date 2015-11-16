@@ -1,8 +1,8 @@
 {
-  "name": "lb-ngIonic",
-  "description": "    Start a new ionic project with LoopBack backend in seconds !",
-  "version": "0.0.1",
-  "homepage": "https://github.com/denzelwamburu/lb-ngIonic",
+  "name": "DekutAPP",
+  "description": "Student Compnion App For Dedan Kimathi University",
+  "version": "2.1.0",
+  "homepage": "https://github.com/denzelwamburu/dekutapp",
   "authors": [
     "Denzel Wamburu <denzjoseph@gmail.com>"
   ],
@@ -17,7 +17,6 @@
     "cordova",
     "ionic"
   ],
-  "license": "MIT",
   "dependencies": {
     "ionic": "driftyco/ionic-bower#1.0.0-rc.5",
     "ngCordova": "~0.1.12-alpha",

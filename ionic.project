@@ -1,5 +1,5 @@
 {
-  "name": "lb-ngIonic",
+  "name": "DekutApp",
   "app_id": "",
   "gulpStartupTasks": [
     "sass",
