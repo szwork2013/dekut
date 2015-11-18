@@ -4,7 +4,7 @@
   </ion-header-bar>
     <ion-content>
         <form novalidate="novalidate" name="loginForm">
-            <div class="list list-inset">
+            <div class="list">
                 <label class="item item-input">
                     <i class="icon ion-ios7-person"></i>
                     <input type="text" name="username" placeholder="E-mail or username" ng-model="credentials.username"
@@ -21,8 +21,9 @@
                         ng-click="login()">
                     Login
                 </button>
+                <!--
                 <button class="button button-block button-royal button-outline" ng-click="goToRegister()">Don't have an account yet?</button>
-
+              -->
             </div>
         </form>
     </ion-content>
