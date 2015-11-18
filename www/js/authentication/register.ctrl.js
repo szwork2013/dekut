@@ -106,6 +106,9 @@ angular.module('app.register', ['lbServices', 'ionic'])
                 console.log($scope.loginError);
             });
         };
+        $scope.goToSigin = function () {
+            $location.path('signin');
+        };
 
 
     });
