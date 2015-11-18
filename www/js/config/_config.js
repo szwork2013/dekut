@@ -7,7 +7,7 @@ var Config = (function(){
     track: false, // should send tracking events to a server
     storage: true, // should save data to browser storage
     storagePrefix: 'app-', // prefix all stoarge entries with this prefix
-    emailSupport: 'denzjoseph@gmail.com',
+    emailSupport: 'dkutapp@gmail.com',
     backendUrl: 'data', // 'http://myserver.com/api/v1',
     parse: {
       applicationId: '',

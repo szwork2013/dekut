@@ -6,19 +6,25 @@
    </ion-nav-buttons>
     </ion-nav-bar>
 
-    <ion-content>
+    <ion-content class="has-header">
         <form novalidate="novalidate" name="registerForm">
-            <div class="list list-inset">
-                <label class="item item-input">
-                    <i class="icon ion-ios-person"></i>
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                  <!--  <i class="icon ion-ios-person"></i> -->
+                  <span class="input-label">UserName</span>
+
                     <input type="text" placeholder="Username" name="username" ng-model="registration.username" required>
                 </label>
-                <label class="item item-input">
-                    <i class="icon ion-email"></i>
+                <label class="item item-input item-floating-label">
+                  <!--  <i class="icon ion-email"></i> -->
+                  <span class="input-label">Email</span>
+
                     <input type="email" placeholder="E-mail" name="email" ng-model="registration.email" required>
                 </label>
-                <label class="item item-input">
-                    <i class="icon ion-ios-locked"></i>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Password</span>
+
+                  <!--  <i class="icon ion-ios-locked"></i> -->
                     <input type="{{inputType}}" placeholder="Password" name="password" ng-model="registration.password"
                            required>
 
