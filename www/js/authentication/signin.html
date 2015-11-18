@@ -1,4 +1,4 @@
-<ion-view title="Signin">
+<ion-view title="Signin To DekutApp">
   <ion-nav-bar class="bar bar-positive">
 
     <ion-nav-buttons side="right">
@@ -11,13 +11,16 @@
     <ion-content class="has-subheader">
         <form novalidate="novalidate" name="loginForm">
             <div class="list">
-                <label class="item item-input">
-                    <i class="icon ion-ios7-person"></i>
-                    <input type="text" name="username" placeholder="E-mail or username" ng-model="credentials.username"
+                <label class="item item-input item-floating-label">
+                <!--  <i class="icon ion-ios7-person"></i> -->
+                  <span class="input-label">Email</span>
+                    <input type="text" name="username" placeholder="Email" ng-model="credentials.username"
                            required>
                 </label>
-                <label class="item item-input">
-                    <i class="icon ion-ios7-locked"></i>
+
+                <label class="item item-input item-floating-label">
+                <!--    <i class="icon ion-ios7-locked"></i> -->
+                <span class="input-label">Password</span>
                     <input type="password" name="password" placeholder="Password" ng-model="credentials.password"
                            required>
                 </label>
