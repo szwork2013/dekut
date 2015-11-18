@@ -1,6 +1,6 @@
 {
   "name": "DekutAPP",
-  "description": "Student Compnion App For Dedan Kimathi University",
+  "description": "Student Companion App For Dedan Kimathi University",
   "version": "2.1.0",
   "dependencies": {
     "gulp": "^3.9.0",

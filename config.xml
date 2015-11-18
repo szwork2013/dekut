@@ -2,7 +2,7 @@
 <widget id="com.dekutapp.dekutapp" version="2.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>DekutAPP</name>
   <description>
-Student Compnion App For Dedan Kimathi University
+Student Companion App For Dedan Kimathi University
   </description>
   <author email="denzjoseph@gmail.com" href="http://twitter.com/denzelwamburu">Denzel Wamburu</author>
   <content src="index.html"/>
