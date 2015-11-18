@@ -3,16 +3,11 @@
   angular.module('app')
     .controller('MenuCtrl', MenuCtrl);
 
-  function MenuCtrl($scope, $state, AuthSrv){
-    var vm = {};
-    $scope.vm = vm;
-
-    vm.logout = logout;
-
-    function logout(){
-      AuthSrv.logout().then(function(){
-        $state.go('login');
-      });
-    };
+  function MenuCtrl($scope, $state, User){
+    $scope.logout = function () {
+        User.logout(function () {
+            $location.path('/signin');
+        });
+    }
   }
 })();
