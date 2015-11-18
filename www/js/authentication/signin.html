@@ -1,8 +1,14 @@
 <ion-view title="Signin">
-  <ion-header-bar class="bar-calm">
-    <div class="title">Login</div>
-  </ion-header-bar>
-    <ion-content>
+  <ion-nav-bar class="bar bar-positive">
+
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-person-add flat" ng-click="goToRegister()"></button>
+    <!--  <button class="button button-icon icon  ion-log-out flat pull-right" ng-click="logout()"></button> -->
+    </ion-nav-buttons>
+
+
+</ion-nav-bar>
+    <ion-content class="has-subheader">
         <form novalidate="novalidate" name="loginForm">
             <div class="list">
                 <label class="item item-input">
