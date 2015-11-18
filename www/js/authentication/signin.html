@@ -9,12 +9,13 @@
 
 </ion-nav-bar>
     <ion-content class="has-subheader">
+      <div>
         <form novalidate="novalidate" name="loginForm">
             <div class="list">
                 <label class="item item-input item-floating-label">
                 <!--  <i class="icon ion-ios7-person"></i> -->
                   <span class="input-label">Email</span>
-                    <input type="text" name="username" placeholder="Email" ng-model="credentials.username"
+                    <input type="email" name="username" placeholder="Email" ng-model="credentials.username"
                            required>
                 </label>
 
@@ -35,5 +36,6 @@
               -->
             </div>
         </form>
+      </div>
     </ion-content>
 </ion-view>
