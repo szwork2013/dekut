@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.dekutapp.dekutapp" version="2.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>DekutAPP</name>
+  <name>DekutApp</name>
   <description>
 Student Companion App For Dedan Kimathi University
   </description>
