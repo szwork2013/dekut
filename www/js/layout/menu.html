@@ -16,25 +16,49 @@
       <h1 class="title">Side Panel</h1>
     </ion-header-bar>
     <ion-content>
-      <div class="list">
-        <a class="item item-avatar" href="#/tab/account">
+      <div class="list" ng-controller="AccountCtrl">
+        <a class="item item-avatar" ui-sref="profile">
                    <img ng-src="{{currentUser.avatar}}">
                    <h2>Hi @<b>{{currentUser.username}}</b></h2>
                    <p>Welcome Back</p>
                </a>
-               
+
                <div class="item item-divider">
                       Home
                 </div>
         <a class="item item-icon-left" ui-sref="app.tabs.twitts" nav-clear menu-close>
-          <i class="icon ion-social-twitter-outline"></i> Happening's
+          <i class="icon ion-mic-b"></i><h2 class="menu-text"> Happening's </h2>
         </a>
         <a class="item item-icon-left" ui-sref="profile" nav-clear menu-close>
-          <i class="icon ion-person"></i> Profile
+          <i nav-clear menu-close class="icon ion-clipboard"></i> <h2 class="menu-text"> Notices </h2>
         </a>
-        <a class="item item-icon-left" ng-click="logout()" menu-close>
-          <i class="icon ion-log-out"></i> Logout
-        </a>
+
+
+         <div class="item item-divider">
+                Academics
+          </div>
+          <a class="item item-icon-left" ui-sref="app.tabs.twitts" nav-clear menu-close>
+            <i class="icon ion-laptop"></i> <h2 class="menu-text">TimeTables</h2>
+          </a>
+          <a class="item item-icon-left" ui-sref="app.tabs.twitts" nav-clear menu-close>
+            <i class="icon ion-laptop"></i> <h2 class="menu-text">Resources</h2>
+          </a>
+          <div class="item item-divider">
+                Mall
+           </div>
+           <!-- dmall -->
+           <a class="item item-icon-left" ui-sref="app.tabs.twitts" nav-clear menu-close>
+             <i class="icon ion-bag"></i><h2 class="menu-text"> dMall </h2>
+           </a>
+           <div class="item item-divider">
+                 Nav
+            </div>
+            <a class="item item-icon-left" ui-sref="feedback" menu-close>
+                <i class="icon ion-email"></i><h2 class="menu-text"> FeedBack </h2>
+              </a>
+            <a class="item item-icon-left" ng-click="logout()" menu-close>
+                <i class="icon ion-log-out"></i><h2 class="menu-text"> Logout </h2>
+              </a>
 
       </div>
     </ion-content>
