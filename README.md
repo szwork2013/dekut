@@ -1,3 +1,3 @@
 ## DekutAPP
 
-An awesome fork for DekutApp.
+An Awesome fork for DekutApp.
