@@ -1,6 +1,6 @@
 /**
  * angular-localforage - Angular service & directive for https://github.com/mozilla/localForage (Offline storage, improved.)
- * @version v1.2.3
+ * @version v1.2.5
  * @link https://github.com/ocombe/angular-localForage
  * @license MIT
  * @author Olivier Combe <olivier.combe@gmail.com>
@@ -16,7 +16,7 @@
     var angular = root.angular || (window && window.angular);
     module.exports = factory(angular, require('localforage')); // Node/Browserify
   } else {
-    factory(root.angular, root.localforage);                        // Browser
+    return factory(root.angular, root.localforage);                        // Browser
   }
 })(this, function(angular, localforage, undefined) {
   'use strict';
@@ -120,7 +120,7 @@
         } else {
           var deferred = $q.defer(),
             args = arguments,
-            localCopy = typeof Blob !== 'undefined' && value instanceof Blob ? value : angular.copy(value);
+            localCopy = typeof Blob !== 'undefined' && typeof ArrayBuffer !== 'undefined' && (value instanceof Blob || value instanceof ArrayBuffer) ? value : angular.copy(value);
 
           //avoid $promises attributes from value objects, if present.
           if(angular.isObject(localCopy) && angular.isDefined(localCopy.$promise)) {
@@ -169,6 +169,11 @@
               return res;
             }
           }).then(function() {
+            for (var i = 0; i < key.length; i++) {
+              if (angular.isUndefined(res[i])) {
+                res[i] = null;
+              }
+            }
             deferred.resolve(res);
           });
         } else {
@@ -477,5 +482,7 @@
       }
     }
   }]);
+
+  return angularLocalForage.name;
 });
 
