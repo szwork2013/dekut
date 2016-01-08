@@ -1,7 +1,7 @@
 {
   "name": "angular-localforage",
   "main": "dist/angular-localForage.js",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "homepage": "https://github.com/ocombe/angular-localForage",
   "authors": [
     "Olivier Combe <olivier.combe@gmail.com>"
@@ -36,14 +36,14 @@
     "angular-mocks": "1.2.x - 1.4.x"
   },
   "dependencies": {
-    "localforage": "1.2.4",
+    "localforage": "1.2.10",
     "angular": "1.2.x - 1.4.x"
   },
-  "_release": "1.2.3",
+  "_release": "1.2.5",
   "_resolution": {
     "type": "version",
-    "tag": "1.2.3",
-    "commit": "3de124fb88f6254585ef6675250e4fca0ad74aa1"
+    "tag": "1.2.5",
+    "commit": "b773edff15632a1424ec60124670d525e3581c11"
   },
   "_source": "git://github.com/ocombe/angular-localForage.git",
   "_target": "~1.2.2",
