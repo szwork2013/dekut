@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('app', ['ionic'])
+  angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance'])
     .config(configBlock)
     .run(runBlock);
 
