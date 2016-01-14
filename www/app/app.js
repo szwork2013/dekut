@@ -63,6 +63,72 @@
         }
       }
     })
+    // academics
+    .state('app.timetable', {
+      url: '/timetable',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/academics/timetable.html',
+          controller: 'TimeTableCtrl'
+        }
+      }
+    })
+    .state('app.results', {
+      url: '/results',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/academics/results.html',
+          controller: 'TimeTableCtrl'
+        }
+      }
+    })
+    .state('app.elibrary', {
+      url: '/elibrary',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/academics/elibrary.html',
+          controller: 'ElibraryCtrl'
+        }
+      }
+    })
+    // dmall logics here
+    .state('app.dmall', {
+        url: '/dmall',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/dmall/dmall.html'
+          }
+        }
+      })
+
+      // school logics
+      .state('app.tour', {
+        url: '/tour',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/tour.html',
+            controller: 'TourCtrl'
+          }
+        }
+      })
+      .state('app.eservices', {
+        url: '/eservices',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/eservices.html',
+            controller: 'EservicesCtrl'
+          }
+        }
+      })
+      .state('app.about', {
+        url: '/about',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/about/about.html',
+            controller: 'AboutCtrl'
+          }
+        }
+      })
     .state('app.settings', {
       url: '/settings',
       views: {
