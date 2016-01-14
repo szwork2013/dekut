@@ -1,7 +1,7 @@
 {
-  "name": "ionic-starter",
+  "name": "DekutApp",
   "version": "0.0.1",
-  "description": "Start a new ionic project in seconds !",
+  "description": "Dedan Kimathi University Student Companion Mobile Application",
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4",
