@@ -7,6 +7,7 @@
     "moment": "~2.10.6"
   },
   "dependencies": {
-    "ionic-material": "~0.4.2"
+    "ionic-material": "~0.4.2",
+    "ionic-filter-bar": "~1.1.1"
   }
 }
