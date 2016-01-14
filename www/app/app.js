@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance'])
+  angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance', 'app.register', 'app.login'])
     .config(configBlock)
     .run(runBlock);
 
@@ -16,6 +16,19 @@
       templateUrl: 'app/authentication/login.html',
       controller: 'LoginCtrl'
     })
+    // auth logics
+    .state('signin', {
+      url: '/signin',
+      templateUrl: 'app/authentication/signin.html',
+     controller: 'SigninCtrl'
+
+    })
+    .state('register', {
+      url: '/register',
+      templateUrl: 'app/authentication/register.html',
+     controller: 'RegisterCtrl'
+    })
+    //main app with menuContent
     .state('app', {
       url: '/app',
       abstract: true,
@@ -37,6 +50,16 @@
         'menuContent': {
           templateUrl: 'app/twitts/twitt.html',
           controller: 'TwittCtrl'
+        }
+      }
+    })
+    //profile page
+    .state('app.profile', {
+      url: '/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/authentication/profile/profile.html',
+          controller: 'AccountCtrl'
         }
       }
     })

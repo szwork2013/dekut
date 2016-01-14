@@ -1,0 +1,60 @@
+<ion-view title="Registration">
+ <ion-nav-bar class="bar bar-balanced-900">
+   <ion-nav-buttons side="left">
+     <button class="button button-icon icon ion-person-add flat" ng-click="goToSigin()"></button>
+   <!--  <button class="button button-icon icon  ion-log-out flat pull-right" ng-click="logout()"></button> -->
+   </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-content class="has-header">
+        <form novalidate="novalidate" name="registerForm">
+            <div class="list">
+              <label class="item item-input item-floating-label">
+                <!--  <i class="icon ion-ios-person"></i> -->
+                <span class="input-label">Full Names</span>
+
+                  <input type="text" placeholder="Full Names" name="fullnames" ng-model="registration.names" required>
+              </label>
+                <label class="item item-input item-floating-label">
+                  <!--  <i class="icon ion-ios-person"></i> -->
+                  <span class="input-label">UserName</span>
+
+                    <input type="text" placeholder="Username" name="username" ng-model="registration.username" required>
+                </label>
+                <label class="item item-input item-floating-label">
+                  <!--  <i class="icon ion-email"></i> -->
+                  <span class="input-label">Email</span>
+
+                    <input type="email" placeholder="E-mail" name="email" ng-model="registration.email" required>
+                </label>
+                <label class="item item-input item-floating-label">
+                  <!--  <i class="icon ion-email"></i> -->
+                  <span class="input-label">PhoneNumber</span>
+
+                    <input type="text" placeholder="PhoneNumber" name="phonenumber" ng-model="registration.phonenumber" required>
+                </label>
+                <label class="item item-input item-floating-label">
+                  <span class="input-label">Password</span>
+
+                  <!--  <i class="icon ion-ios-locked"></i> -->
+                    <input type="{{inputType}}" placeholder="Password" name="password" ng-model="registration.password"
+                           required>
+
+                </label>
+                <ion-toggle ng-model="passwordCheckbox" toggle-class="toggle-calm" ng-click="hideShowPassword()" >Show password</ion-toggle>
+
+             <div>
+
+     </div>
+            </div>
+
+            <div class="padding row">
+            <button ng-disabled="!registerForm.$valid" ng-click="register()"
+                    class="button button-full button-flat button-positive icon-left ion-outlet">
+                Register
+            </button>
+          </div>
+
+                    </form>
+    </ion-content>
+</ion-view>
