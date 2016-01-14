@@ -15,10 +15,10 @@ angular.module('jett.ionic.filter.bar', ['ionic']);
           filterBarTemplate =
             '<div class="filter-bar-wrapper filter-bar-{{::config.theme}} filter-bar-transition-{{::config.transition}}">' +
               '<div class="bar bar-header bar-{{::config.theme}} item-input-inset">' +
-                '<button class="filter-bar-cancel button button-icon icon {{::config.back}}"></button>' +
+                '<button class="filter-bar-cancel button flat button-icon icon {{::config.back}}"></button>' +
                 '<label class="item-input-wrapper">' +
                   '<input type="search" class="filter-bar-search" ng-model="data.filterText" placeholder="{{::config.placeholder}}" />' +
-                  '<button class="filter-bar-clear button button-icon icon" ng-class="getClearButtonClass()"></button>' +
+                  '<button class="filter-bar-clear button flat button-icon icon" ng-class="getClearButtonClass()"></button>' +
                 '</label>' +
               '</div>' +
             '</div>';

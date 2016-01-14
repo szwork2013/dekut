@@ -4,7 +4,7 @@
     .config(configBlock)
     .run(runBlock);
 
-  function configBlock($stateProvider, $urlRouterProvider, $provide){
+  function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider){
     $stateProvider
     .state('loading', {
       url: '/loading',
