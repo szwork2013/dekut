@@ -1,5 +1,5 @@
-angular.module('app.account', ['lbServices', 'ionic'])
-    .controller('AccountCtrl', function ($scope, $location, User) {
+angular.module('app.profile', ['lbServices', 'ionic'])
+    .controller('ProfileCtrl', function ($scope, $location, User) {
         $scope.currentUser = User.getCurrent();
     /**    Tweet.count({ownerId: $scope.currentUser.id})
             .$promise

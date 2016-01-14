@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance', 'app.register', 'app.login'])
+  angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance', 'app.register', 'app.login', 'app.profile'])
     .config(configBlock)
     .run(runBlock);
 
@@ -59,7 +59,7 @@
       views: {
         'menuContent': {
           templateUrl: 'app/authentication/profile/profile.html',
-          controller: 'AccountCtrl'
+          controller: 'ProfileCtrl'
         }
       }
     })
