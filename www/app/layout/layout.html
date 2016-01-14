@@ -14,12 +14,109 @@
     <ion-header-bar class="bar-positive">
       <h1 class="title">Menu</h1>
     </ion-header-bar>
-    <ion-content>
+  <!--  <ion-content>
       <div class="list">
         <a class="item item-icon-left" ui-sref="app.twitts" nav-clear menu-close><i class="icon ion-social-twitter"></i> Twitts</a>
         <a class="item item-icon-left" ui-sref="app.settings" nav-clear menu-close><i class="icon ion-android-options"></i> Paramètres</a>
         <a class="item item-icon-left" ng-click="fn.logout()" nav-clear menu-close><i class="icon ion-log-out"></i> Déconnexion</a>
       </div>
+    </ion-content> -->
+    <ion-content has-header="true" class="ionic" scroll="true" ng-controller="ProfileCtrl">
+      <ion-list class="disable-user-behavior">
+        <ion-list>
+        <div class="list">
+        <a class="item item-avatar" href="#/tab/account">
+              <img ng-src="{{currentUser.avatar}}">
+              <h2>Hi @<b>{{currentUser.username}}</b></h2>
+              <p>Welcome Back</p>
+          </a>
+      <ul class="ionic">
+          <div class="item item-divider">
+                Home
+          </div>
+          <li>
+
+            <a nav-clear menu-close ui-sref="app.twitts" class="item item-icon-right">
+              <i class="icon ion-mic-b"></i>
+             <h2 class="menu-text">What's Happening</h2>
+           </a>
+        </li>
+
+
+
+           <li>
+          <a nav-clear menu-close ui-sref="app.notices" class="item item-icon-right">
+  <i class="icon ion-clipboard"></i>
+             <h2 class="menu-text">Notices</h2>
+
+           </a>
+        </li>
+          <div class="item item-divider">
+               Academics
+          </div>
+          <li>
+          <a class="item item-icon-right" nav-clear menu-close ui-sref="app.timetables">
+              <i class="icon ion-clock"></i>
+             <h2 class="menu-text">TimeTables</h2> </a>
+        </li>
+       <li>
+          <a class="item item-icon-right" nav-clear menu-close ui-sref="app.elibrary">
+              <i class="icon ion-laptop"></i>
+             <h2 class="menu-text">Elibrary</h2> </a>
+        </li>
+
+        <li>
+          <a class="item item-icon-right" nav-clear menu-close ui-sref="app.results">
+              <i class="icon ion-stats-bars"></i>
+             <h2 class="menu-text">Results</h2> </a>
+        </li>
+          <div class="item item-divider">
+              Shop
+          </div>
+           <li>
+          <a class="item item-icon-right" nav-clear menu-close ui-sref="app.dmall">
+            <i class="icon ion-ios-cart"></i>
+           <h2 class="menu-text">DekutMall</h2> </a>
+
+              </i>
+               </a>
+        </li>
+          <div class="item item-divider">
+               School
+          </div>
+        <li>
+          <a class="item item-icon-right" nav-clear menu-close ui-sref="app.tour">
+              <i class="icon ion-map"></i>
+             <h2 class="menu-text">Take A Tour</h2> </a>
+        </li>
+        <li>
+          <a class="item item-icon-right" nav-clear menu-close ui-sref="app.eservices">
+              <i class="icon ion-help-buoy"></i>
+             <h2 class="menu-text">E-Services</h2> </a>
+        </li>
+          <div class="item item-divider">
+                Account
+          </div>
+          <li>
+          <a nav-clear menu-close ui-sref="app.profile" class="item item-icon-right">
+            <i class="icon ion-person"></i>
+             <h2 class="menu-text">My Profile</h2> </a>
+        </li>
+           <li>
+          <a class="item item-icon-right" nav-clear menu-close ui-sref="app.feedback">
+              <i class="icon ion-email"></i>
+           <h2 class="menu-text">FeedBack</h2> </a>
+
+        </li>
+
+
+      </ul>
+        </div>
+      </ion-list>
+      <div class="tabs tabs-royal tabs-icon-left">
+         <a class="tab-item" href="http://www.twitter.com/DekutApp"> <i class="icon ion-social-twitter"></i> Twitter </a>
+         <a class="tab-item"href="http://www.facebook.com/DekutApp"> <i class="icon ion-social-facebook"></i> FaceBook </a>
+       </div>
     </ion-content>
   </ion-side-menu>
 
