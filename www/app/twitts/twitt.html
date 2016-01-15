@@ -1,4 +1,4 @@
-<!--<ion-view title="Twitt">
+<ion-view title="Twitt">
   <ion-nav-buttons side="left">
     <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
   </ion-nav-buttons>
@@ -6,12 +6,13 @@
     <div class="list card">
       <div class="item item-avatar">
         <img ng-src="{{data.twitt.avatar}}">
-        <h2>{{data.twitt.user}}</h2>
-        <p>{{data.twitt.content}}</p>
+        <h2>{{data.tweet.ownerUsername}}</h2>
+        <p>{{data.tweet.content}}</p>
       </div>
     </div>
   </ion-content>
-</ion-view> -->
+</ion-view>
+<!--
 <div  class="ionic">
     <ion-view title="Twitt Detail">
     <ion-content class="ionic" padding="false">
@@ -63,15 +64,6 @@ Comment
             </ion-modal-view>
         </script>
  <button class="button button-fab button-fab-bottom-right button-balanced icon ion-chatbox waves-effect waves-button waves-light" ng-click="openModal()"></button>
-   <!-- <form novalidate="novalidate" name="commentForm">
-        <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
-            <label class="item-input-wrapper">
-                <input type="text" placeholder="Type your comment" ng-model="newComment.content" required/>
-            </label>
-            <button ng-disabled="!commentForm.$valid" class="button button-small button-calm ink" ng-click="saveComment()">
-                Comment
-            </button>
-        </ion-footer-bar>
-    </form> -->
 </ion-view>
 </div>
+-->
