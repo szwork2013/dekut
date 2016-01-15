@@ -35,21 +35,8 @@
       }
     });
   };
+
   // post and save tweet
-/**   $scope.postTweet = function() {
-      Tweet
-        .create({
-          content: $scope.tweet.content,
-          id: $scope.tweet.id,
-          date : new Date().toJSON(),
-          ownerId : $scope.currentUser.id,
-          ownerUsername : $scope.currentUser.username
-        })
-        .$promise
-        .then(function() {
-          $state.go('app.twitts');
-        });
-    }; **/
     $scope.postTweet = function () {
     //    $scope.close();
         $scope.newTweet.date = new Date().toJSON();
@@ -66,33 +53,44 @@
     };
   }
 
-/**  .controller('AddReviewController', ['$scope', 'CoffeeShop', 'Review',
-      '$state', function($scope, CoffeeShop, Review, $state) {
-    $scope.action = 'Add';
-    $scope.coffeeShops = [];
-    $scope.selectedShop;
-    $scope.review = {};
-    $scope.isDisabled = false;
+// like function
+$scope.like = function (index) {
+    if ($scope.tweets[index].userLikedTweet) {
+        /**
+         * If user liked the tweet before find the id
+         * belonging to his like and remove them
+         */
+        Like
+            .find({filter: {where: {ownerId: $scope.currentUser.id, tweetId: $scope.tweets[index].id}}})
+            .$promise
+            .then(function (res) {
+                Like.destroyById({id: res[0].id},
+                    function (res) {
+                        /**
+                         * Remove like from the view
+                         */
+                        $scope.tweets[index].userLikedTweet = false;
+                        $scope.tweets[index].likes -= 1;
+                    },
+                    function (err) {
+                        console.log(err);
+                    })
+            })
+    } else {
+        /**
+         * Create a new entry in the like model
+         */
+        Like.create({tweetId: $scope.tweets[index].id, ownerId: $scope.currentUser.id},
+            function (res) {
+                $scope.tweets[index].userLikedTweet = true;
+                $scope.tweets[index].likes += 1;
+            },
+            function (err) {
+                console.log(err);
+            })
+    }
 
-    CoffeeShop
-      .find()
-      .$promise
-      .then(function(coffeeShops) {
-        $scope.coffeeShops = coffeeShops;
-        $scope.selectedShop = $scope.selectedShop || coffeeShops[0];
-      });
 
-    $scope.submitForm = function() {
-      Review
-        .create({
-          rating: $scope.review.rating,
-          comments: $scope.review.comments,
-          coffeeShopId: $scope.selectedShop.id
-        })
-        .$promise
-        .then(function() {
-          $state.go('all-reviews');
-        });
-    };
-  }]) **/
+};
+
 })();
