@@ -78,13 +78,13 @@ $ionicModal.fromTemplateUrl('newtweet.html', {
 
 // like function
 $scope.like = function (index) {
-    if ($scope.tweets[index].userLikedTweet) {
+    if ($scope.tweets.userLikedTweet) {
         /**
          * If user liked the tweet before find the id
          * belonging to his like and remove them
          */
         Like
-            .find({filter: {where: {ownerId: $scope.currentUser.id, tweetId: $scope.tweets[index].id}}})
+            .find({filter: {where: {ownerId: $scope.currentUser.id, tweetId: $scope.tweets.id}}})
             .$promise
             .then(function (res) {
                 Like.destroyById({id: res[0].id},
@@ -92,8 +92,8 @@ $scope.like = function (index) {
                         /**
                          * Remove like from the view
                          */
-                        $scope.tweets[index].userLikedTweet = false;
-                        $scope.tweets[index].likes -= 1;
+                        $scope.tweets.userLikedTweet = false;
+                        $scope.tweets.likes -= 1;
                     },
                     function (err) {
                         console.log(err);
@@ -104,19 +104,19 @@ $scope.like = function (index) {
          * Create a new entry in the like model
          */
         Like.create({
-           tweetId: $scope.tweets[index].id,
+           tweetId: $scope.tweets.id,
            ownerId: $scope.currentUser.id
          },
             function (res) {
-                $scope.tweets[index].userLikedTweet = true;
-                $scope.tweets[index].likes += 1;
+                $scope.tweets.userLikedTweet = true;
+                $scope.tweets.likes += 1;
             },
             function (err) {
                 console.log(err);
             })
-    }
 
 
+}
 };
 }
 })();
