@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('TwittsCtrl', TwittsCtrl);
 
-  function TwittsCtrl($scope, Storage, Backend, $ionicFilterBar, User, $state, Tweet, $location){
+  function TwittsCtrl($scope, Storage, Backend, $ionicFilterBar, User, $state, Tweet, $location, Like, $ionicModal, $timeout){
     var data = {}, fn = {};
     $scope.data = data;
     $scope.fn = fn;
@@ -36,9 +36,32 @@
     });
   };
 
+// modal for new tweet
+$ionicModal.fromTemplateUrl('newtweet.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.TweetModal = function () {
+        $scope.modal.show();
+        $timeout(function () {
+            $scope.modal.hide();
+        }, 20000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    });
+
+ $scope.close = function() {
+    $scope.modal.hide();
+};
+
   // post and save tweet
-    $scope.postTweet = function () {
-    //    $scope.close();
+    $scope.PostTweet = function () {
+        $scope.close();
         $scope.newTweet.date = new Date().toJSON();
         $scope.newTweet.ownerId = $scope.currentUser.id;
         $scope.newTweet.ownerUsername = $scope.currentUser.username;
@@ -51,7 +74,7 @@
                 console.log(err)
             })
     };
-  }
+
 
 // like function
 $scope.like = function (index) {
@@ -80,7 +103,10 @@ $scope.like = function (index) {
         /**
          * Create a new entry in the like model
          */
-        Like.create({tweetId: $scope.tweets[index].id, ownerId: $scope.currentUser.id},
+        Like.create({
+           tweetId: $scope.tweets[index].id,
+           ownerId: $scope.currentUser.id
+         },
             function (res) {
                 $scope.tweets[index].userLikedTweet = true;
                 $scope.tweets[index].likes += 1;
@@ -92,5 +118,5 @@ $scope.like = function (index) {
 
 
 };
-
+}
 })();

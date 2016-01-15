@@ -24,16 +24,17 @@
           {{tweet.content}}
           </p>
           <p>
-            <a href="#" class="subdued">1 Like</a>
+          <!--  <a href="#" class="subdued">1 Like</a> -->
+
+            </a>
             <a href="#" class="subdued">5 Comments</a>
           </p>
         </div>
 
-        <div class="item tabs tabs-secondary tabs-icon-left" ng-click="like()">
-          <a class="tab-item" href="#">
-            <i class="icon ion-star"></i>
-            Favorite
-          </a>
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a ng-class="tweet.userLikedTweet ? 'button button-small button-royal' : 'button button-small button-outline button-balanced'" ng-click="like({{$index}})">
+              {{tweet.likes}}
+              <i class="ion-ios7-star"></i></a>
 
           <a class="tab-item" ui-sref="app.twitt({id: tweet.id})">
             <i class="icon ion-more"></i>
@@ -49,18 +50,31 @@
       <p>No Results</p>
     </div>
   </ion-content>
-<!--  <button class="button button-energized-900 button-fab button-fab-bottom-right fab">
+  <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="TweetModal()">
   <i class="icon ion-edit light"></i>
-</button> -->
-  <form novalidate="novalidate" name="tweetForm">
-      <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
-          <label class="item-input-wrapper">
-              <input type="text" placeholder="Type your tweet" ng-model="newTweet.content" required/>
-          </label>
-          <button ng-disabled="!tweetForm.$valid" class="button button-positive " ng-click="postTweet()">
-              Send
-          </button>
-      </ion-footer-bar>
-  </form>
+</button>
+<script id="newtweet.html" type="text/ng-template">
+     <ion-modal-view class="ionic">
+         <header class="bar bar-header bar-positive flat">
+<h1 class="title fab-left">New Twitt</h1>
+<button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+</header>
+<ion-content class="padding has-header">
+         <form novalidate="novalidate" name="tweetForm">
+  <label class="item item-input item-floating-label">
+             <span class="input-label">What's Happening</span>
+         <input type="text" placeholder="Type your twitt" ng-model="newTweet.content" required/>
+         </label>
+
+<button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
+                 data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="PostTweet()">
+Send
+             </button>
+</form>
+
+</ion-content>
+     </ion-modal-view>
+ </script>
+
 
 </ion-view>
