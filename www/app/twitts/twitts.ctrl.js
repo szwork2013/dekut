@@ -10,10 +10,10 @@
     var filterBarInstance;
 
     $scope.$on('$ionicView.enter', function(){
-      Storage.getTwitts().then(function(twitts){
-        data.twitts = twitts;
-        Backend.getTwitts().then(function(twitts){
-          data.twitts = twitts;
+      Storage.getTweets().then(function(tweets){
+        data.tweets = tweets;
+        Backend.getTweets().then(function(tweets){
+          data.tweets = tweets;
         });
       });
     });

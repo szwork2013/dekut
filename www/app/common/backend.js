@@ -5,11 +5,11 @@
 
   function Backend($http, Storage, C){
     return {
-      getTwitts: getTwitts
+      getTweets: getTweets
     };
 
     function getTwitts(){
-      return $http.get(C.backendUrl+'/twitts.json').then(function(res){
+      return $http.get(C.backendUrl+'/tweets.json').then(function(res){
         return Storage.setTwitts(res.data).then(function(){
           return res.data;
         });

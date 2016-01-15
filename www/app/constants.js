@@ -2,6 +2,6 @@
   'use strict';
   angular.module('app')
     .constant('C', {
-      backendUrl: 'data'
+      backendUrl: 'http://localhost:3000/api'
     });
 })();

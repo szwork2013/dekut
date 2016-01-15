@@ -161,7 +161,7 @@
       };
     }]);
     // interceptors
-    $httpProvider.interceptors.push(function($q, $location) {
+/**    $httpProvider.interceptors.push(function($q, $location) {
         return {
             responseError: function(rejection) {
                 console.log("Redirect");
@@ -172,7 +172,7 @@
                 return $q.reject(rejection);
             }
         };
-    });
+    }); **/
   }
 
   // catch JavaScript errors
