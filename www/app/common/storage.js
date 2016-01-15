@@ -9,7 +9,7 @@
     var keys = {
       user: 'user',
       userSettings: 'user-settings',
-      twitts: 'twitts'
+      tweets: 'tweets'
     };
     return {
       // user
@@ -18,9 +18,9 @@
       getUserSettings: getUserSettings,
       setUserSettings: setUserSettings,
       // twitts
-      getTwitt: getTwitt,
-      getTwitts: getTwitts,
-      setTwitts: setTwitts,
+      getTweet: getTweet,
+      getTweets: getTweets,
+      setTweets: setTweets,
       // global
       clear: clear
     };
@@ -44,18 +44,18 @@
       return _StorageUtils.set(keys.userSettings, settings);
     }
 
-    function getTwitt(id){
-      return getTwitts().then(function(twitts){
-        return _.find(twitts, {id: id});
+    function getTweet(id){
+      return getTweets().then(function(tweets){
+        return _.find(tweets, {id: id});
       });
     }
 
-    function getTwitts(){
-      return _StorageUtils.get(keys.twitts);
+    function getTweets(){
+      return _StorageUtils.get(keys.tweets);
     }
 
-    function setTwitts(twitts){
-      return _StorageUtils.set(keys.twitts, twitts);
+    function setTweets(tweets){
+      return _StorageUtils.set(keys.tweets, tweets);
     }
 
     function clear(){

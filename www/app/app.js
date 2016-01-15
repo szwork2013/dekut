@@ -1,6 +1,7 @@
 (function(){
   'use strict';
-  angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance', 'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'app.tweet', 'app.home'])
+  angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
+   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'app.tweet'])
     .config(configBlock)
     .run(runBlock);
 
@@ -40,7 +41,7 @@
       views: {
         'menuContent': {
           templateUrl: 'app/twitts/twitts.html',
-          controller: 'HomeTabCtrl'
+          controller: 'TwittsCtrl'
         }
       }
     })

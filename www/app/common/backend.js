@@ -8,9 +8,9 @@
       getTweets: getTweets
     };
 
-    function getTwitts(){
-      return $http.get(C.backendUrl+'/tweets.json').then(function(res){
-        return Storage.setTwitts(res.data).then(function(){
+    function getTweets(){
+      return $http.get(C.backendUrl+'/tweets').then(function(res){
+        return Storage.setTweets(res.data).then(function(){
           return res.data;
         });
       });
