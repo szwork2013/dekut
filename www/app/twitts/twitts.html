@@ -9,16 +9,16 @@
     <div ng-if="data.tweets.length === 0" class="empty-msg">No Tweets At Moment :(</div>
     <div ng-if="data.tweets.length > 0" class="list">
       <ion-list>
-      <div class="list card" ng-repeat="tweet in data.filteredTweets = (data.tweets | filter:search) track by tweet.id" ui-sref="app.twitt({id: tweet.id})">
+      <div class="list card" ng-repeat="tweet in data.filteredTweets = (data.tweets | filter:search) track by tweet.id">
 
-        <div class="item item-avatar">
+        <div class="item item-avatar"  ui-sref="app.twitt({id: tweet.id})">
           <img ng-src="{{item.avatar}}">
           <h2>{{tweet.ownerUsername}}</h2>
-          <p>November 05, 1955</p>
+          <p><i class="icon ion-ios-clock"></i> {{tweet.date | timeDistance}} Ago</p>
 
         </div>
 
-        <div class="item item-body">
+        <div class="item item-body" ui-sref="app.twitt({id: tweet.id})">
         <!--  <img class="full-image" ng-src="{{item.image}}"> -->
           <p>
           {{tweet.content}}
@@ -29,13 +29,13 @@
           </p>
         </div>
 
-        <div class="item tabs tabs-secondary tabs-icon-left">
+        <div class="item tabs tabs-secondary tabs-icon-left" ng-click="like()">
           <a class="tab-item" href="#">
             <i class="icon ion-star"></i>
             Favorite
           </a>
 
-          <a class="tab-item" href="#">
+          <a class="tab-item" ui-sref="app.twitt({id: tweet.id})">
             <i class="icon ion-more"></i>
           Read More
           </a>
