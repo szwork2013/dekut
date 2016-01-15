@@ -108,7 +108,7 @@ angular.module('app.tweet', ['lbServices', 'ionic'])
 
                     })
         };
-        $scope.getComments();
+//        $scope.getComments();
 
         /**
          * @name saveComment()

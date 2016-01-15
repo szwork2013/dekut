@@ -8,6 +8,7 @@
     $scope.data = data;
     $scope.fn = fn;
     var filterBarInstance;
+    $scope.currentUser = User.getCurrent();
 
     $scope.$on('$ionicView.enter', function(){
       Storage.getTweets().then(function(tweets){
