@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('TwittsCtrl', TwittsCtrl);
 
-  function TwittsCtrl($scope, Storage, Backend, $ionicFilterBar){
+  function TwittsCtrl($scope, Storage, Backend, $ionicFilterBar, User){
     var data = {}, fn = {};
     $scope.data = data;
     $scope.fn = fn;
