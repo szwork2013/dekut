@@ -49,7 +49,18 @@
       <p>No Results</p>
     </div>
   </ion-content>
-  <button class="button button-energized-900 button-fab button-fab-bottom-right fab">
+<!--  <button class="button button-energized-900 button-fab button-fab-bottom-right fab">
   <i class="icon ion-edit light"></i>
-  </button>
+</button> -->
+  <form novalidate="novalidate" name="tweetForm">
+      <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+          <label class="item-input-wrapper">
+              <input type="text" placeholder="Type your tweet" ng-model="newTweet.content" required/>
+          </label>
+          <button ng-disabled="!tweetForm.$valid" class="button button-positive " ng-click="postTweet()">
+              Send
+          </button>
+      </ion-footer-bar>
+  </form>
+
 </ion-view>

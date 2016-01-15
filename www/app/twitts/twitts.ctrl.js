@@ -3,14 +3,16 @@
   angular.module('app')
     .controller('TwittsCtrl', TwittsCtrl);
 
-  function TwittsCtrl($scope, Storage, Backend, $ionicFilterBar, User, $state){
+  function TwittsCtrl($scope, Storage, Backend, $ionicFilterBar, User, $state, Tweet, $location){
     var data = {}, fn = {};
     $scope.data = data;
     $scope.fn = fn;
     var filterBarInstance;
     $scope.currentUser = User.getCurrent();
-  //  $scope.tweets = [];
-    $scope.tweet = {};
+  // $scope.tweets = [];
+  //  $scope.tweet = {};
+  $scope.newTweet = {};
+  $scope.tweets = [];
 
     $scope.$on('$ionicView.enter', function(){
       Storage.getTweets().then(function(tweets){
@@ -34,7 +36,7 @@
     });
   };
   // post and save tweet
-   $scope.postTweet = function() {
+/**   $scope.postTweet = function() {
       Tweet
         .create({
           content: $scope.tweet.content,
@@ -47,6 +49,20 @@
         .then(function() {
           $state.go('app.twitts');
         });
+    }; **/
+    $scope.postTweet = function () {
+    //    $scope.close();
+        $scope.newTweet.date = new Date().toJSON();
+        $scope.newTweet.ownerId = $scope.currentUser.id;
+        $scope.newTweet.ownerUsername = $scope.currentUser.username;
+        Tweet.create($scope.newTweet,
+            function (res) {
+                delete $scope.newTweet;
+                $scope.refresh();
+            },
+            function (err) {
+                console.log(err)
+            })
     };
   }
 
