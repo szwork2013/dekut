@@ -4,7 +4,7 @@
     .config(configBlock)
     .run(runBlock);
 
-  function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider){
+  function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider, $httpProvider){
     $stateProvider
     .state('loading', {
       url: '/loading',
@@ -160,6 +160,19 @@
         Logger.error('Angular error: '+data.message, {cause: data.cause, stack: data.stack});
       };
     }]);
+    // interceptors
+    $httpProvider.interceptors.push(function($q, $location) {
+        return {
+            responseError: function(rejection) {
+                console.log("Redirect");
+                if (rejection.status == 401 && $location.path() !== '/signin' && $location.path() !== '/register') {
+                    $location.nextAfterLogin = $location.path();
+                    $location.path('#/app/twitts');
+                }
+                return $q.reject(rejection);
+            }
+        };
+    });
   }
 
   // catch JavaScript errors
@@ -187,7 +200,7 @@
     return stopPropagation;
   };
 
-  function runBlock($rootScope){
+  function runBlock($rootScope, User){
     $rootScope.safeApply = function(fn){
       var phase = this.$root ? this.$root.$$phase : this.$$phase;
       if(phase === '$apply' || phase === '$digest'){
@@ -198,5 +211,9 @@
         this.$apply(fn);
       }
     };
+    // get user auth status
+    if (User.getCachedCurrent() == null) {
+        User.getCurrent();
+    }
   }
 })();

@@ -11,7 +11,7 @@
       Storage.clear().then(function(){
         $ionicHistory.clearHistory();
         $ionicHistory.clearCache();
-        $state.go('login');
+        $state.go('signin');
       });
     };
   }

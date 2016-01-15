@@ -1,7 +1,7 @@
 angular.module('app.login', ['lbServices', 'ionic'])
     .controller('SigninCtrl', function ($scope, User, $location, $ionicPopup, $ionicLoading) {
         if (User.getCachedCurrent()!==null) {
-           $location.path('app/tabs/twitts');
+           $location.path('app/twitts');
         }
         /**
          * Currently you need to initialiate the variables
@@ -53,7 +53,7 @@ angular.module('app.login', ['lbServices', 'ionic'])
             },
             $scope.credentials,
                 function () {
-                    var next = $location.nextAfterLogin || 'app/tabs/twitts';
+                    var next = $location.nextAfterLogin || 'app/twitts';
                     $location.nextAfterLogin = null;
                     $location.path(next);
                     $scope.hide();
