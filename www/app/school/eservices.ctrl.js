@@ -18,8 +18,8 @@ function EservicesCtrl($scope, User, Eservice){
 
       })
       .$promise
-      .then(function() {
-      console.log('err')
+      .then(function(err) {
+      console.log(err)
       });
   };
 
