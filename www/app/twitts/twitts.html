@@ -1,0 +1,82 @@
+ <ion-view title="What's Happening">
+
+    <ion-nav-buttons side="secondary">
+      <button class="button flat button-icon icon ion-ios-search-strong" ng-click="showFilterBar()">
+      </button>
+    </ion-nav-buttons>
+
+  <ion-content class="has-header">
+    <div ng-if="data.tweets.length === 0" class="empty-msg">No Tweets At Moment :(</div>
+    <div ng-if="data.tweets.length > 0" class="list">
+      <ion-list>
+      <div class="list card" ng-repeat="tweet in data.filteredTweets = (data.tweets | filter:search) track by tweet.id">
+
+        <div class="item item-avatar"  ui-sref="app.twitt({id: tweet.id})">
+          <img ng-src="{{item.avatar}}">
+          <h2>{{tweet.ownerUsername}}</h2>
+          <p><i class="icon ion-ios-clock"></i> {{tweet.date | timeDistance}} Ago</p>
+
+        </div>
+
+        <div class="item item-body" ui-sref="app.twitt({id: tweet.id})">
+        <!--  <img class="full-image" ng-src="{{item.image}}"> -->
+          <p>
+          {{tweet.content}}
+          </p>
+          <p>
+          <!--  <a href="#" class="subdued">1 Like</a> -->
+
+            </a>
+            <a href="#" class="subdued">5 Comments</a>
+          </p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a ng-class="tweet.userLikedTweet ? 'button button-small button-royal' : 'button button-small button-outline button-balanced'" ng-click="like()">
+          <!--    {{tweet.likes}} --> Favorite
+              <i class="ion-ios7-star"></i></a>
+
+          <a class="tab-item" ui-sref="app.twitt({id: tweet.id})">
+            <i class="icon ion-more"></i>
+          Read More
+          </a>
+          <a class="button-icon icon ion-android-more-vertical"></a>
+
+        </div>
+      </div>
+    </ion-list>
+    </div>
+    <div ng-if="items !== undefined && !items.length" class="no-results">
+      <p>No Results</p>
+    </div>
+  </ion-content>
+  <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="TweetModal()">
+  <i class="icon ion-edit light"></i>
+</button>
+<script id="newtweet.html" type="text/ng-template">
+     <ion-modal-view class="ionic">
+         <header class="bar bar-header bar-positive flat">
+<h1 class="title fab-left">New Twitt</h1>
+<button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+</header>
+<ion-content class="has-header">
+         <form novalidate="double-padding novalidate" name="tweetForm">
+<div class="content item-body">
+         <label class="item item-input item-floating-label">
+             <span class="input-label">Whats Happening</span>
+         <input type="text" placeholder="Type Whats Happening..." ng-model="newTweet.content" required>
+         </label>
+</div>
+
+<button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
+                 data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="PostTweet()">
+Send
+             </button>
+</form>
+
+</ion-content>
+     </ion-modal-view>
+ </script>
+
+
+</ion-view>
