@@ -65,12 +65,12 @@
       }
     })
     // academics
-    .state('app.timetable', {
-      url: '/timetable',
+    .state('app.timetables', {
+      url: '/timetables',
       views: {
         'menuContent': {
-          templateUrl: 'app/academics/timetable.html',
-          controller: 'TimeTableCtrl'
+          templateUrl: 'app/academics/timetables/timetables.html',
+          controller: 'TimetablesCtrl'
         }
       }
     })
@@ -79,7 +79,7 @@
       views: {
         'menuContent': {
           templateUrl: 'app/academics/results.html',
-          controller: 'TimeTableCtrl'
+          controller: 'TimetablesCtrl'
         }
       }
     })
