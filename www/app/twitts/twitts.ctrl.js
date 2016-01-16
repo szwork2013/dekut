@@ -46,9 +46,9 @@ $ionicModal.fromTemplateUrl('newtweet.html', {
 
     $scope.TweetModal = function () {
         $scope.modal.show();
-        $timeout(function () {
+      /**  $timeout(function () {
             $scope.modal.hide();
-        }, 20000);
+        }, 20000); **/
     };
     // Cleanup the modal when we're done with it
     $scope.$on('$destroy', function () {

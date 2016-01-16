@@ -3,28 +3,33 @@
   angular.module('app')
     .controller('TimetablesCtrl', TimetablesCtrl);
 
-  function TimetablesCtrl($scope, User, Personaltt){
+  function TimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout){
     $scope.currentUser = User.getCurrent();
     $scope.personaltt = {};
+    // modal for new tweet
+    $ionicModal.fromTemplateUrl('newptt.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
 
-/**
-    // post and save tweet
-      $scope.PostPTT = function () {
-    //      $scope.close();
-        $scope.newPTT.unit = $scope.unit;
-          $scope.newPTT.timestart = new Date().toJSON();
-           $scope.newPTT.timestart = new Date().toJSON();
-          $scope.newPTT.ownerId = $scope.currentUser.id;
-          $scope.newPTT.ownerUsername = $scope.currentUser.username;
-          Personaltt.create($scope.newPTT,
-              function (res) {
-                  delete $scope.newPTT;
-            //      $scope.refresh();
-              },
-              function (err) {
-                  console.log(err)
-              })
-      }; **/
+        $scope.NewPTTModal = function () {
+            $scope.modal.show();
+          /**  $timeout(function () {
+                $scope.modal.hide();
+            }, 20000); **/
+        };
+        // Cleanup the modal when we're done with it
+        $scope.$on('$destroy', function () {
+            $scope.modal.remove();
+        });
+
+     $scope.close = function() {
+        $scope.modal.hide();
+    };
+
+
       $scope.PostPTT = function() {
         Personaltt
           .create({

@@ -43,7 +43,7 @@ angular.module('app.register', ['lbServices', 'ionic'])
          * Redirect user to the app if already logged in
          */
         if (User.getCachedCurrent()!==null) {
-            $location.path('app/tabs/twitts');
+            $location.path('app/twitts');
         }
 
         /**
@@ -67,7 +67,7 @@ angular.module('app.register', ['lbServices', 'ionic'])
                             User.login({include: 'user', rememberMe: true}, $scope.registration)
                                 .$promise
                                 .then(function (res) {
-                                    $location.path('app/tabs/twitts')
+                                    $location.path('app/twitts')
                                                             $scope.hide();
 
                                 }, function (err) {
