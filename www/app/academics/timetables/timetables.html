@@ -3,11 +3,19 @@
            <form novalidate="double-padding novalidate" name="PTTForm">
   <div class="content item-body">
            <label class="item item-input item-floating-label">
-               <span class="input-label">New TT</span>
-           <input type="text" placeholder="Type Whats Happening..." ng-model="newPPT.unit" required>
+               <span class="input-label">Unit</span>
+           <input type="text" placeholder="What Unit?" ng-model="personaltt.unit" required>
+           </label>
+           <label class="item item-input item-floating-label">
+               <span class="input-label">Timestart</span>
+           <input type="text" placeholder="When Will You Start" ng-model="personaltt.timestart" required>
+           </label>
+           <label class="item item-input item-floating-label">
+               <span class="input-label">Timestop</span>
+           <input type="text" placeholder="When Will You Stop?" ng-model="personaltt.timestop" required>
            </label>
 
-        
+
   </div>
 
   <button  class="button button-full button-positive icon-left ion-paper-airplane"

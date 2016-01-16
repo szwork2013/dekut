@@ -5,10 +5,9 @@
 
   function TimetablesCtrl($scope, User, Personaltt){
     $scope.currentUser = User.getCurrent();
-    $scope.newPTT = {};
-    $scope.newPTTs = [];
+    $scope.personaltt = {};
 
-
+/**
     // post and save tweet
       $scope.PostPTT = function () {
     //      $scope.close();
@@ -25,8 +24,21 @@
               function (err) {
                   console.log(err)
               })
-      };
+      }; **/
+      $scope.PostPTT = function() {
+        Personaltt
+          .create({
+            unit : $scope.personaltt.unit,
+            timestart: $scope.personaltt.timestart,
+            timestop : $scope.personaltt.timestop,
+            ownerId : $scope.currentUser.id
 
+          })
+          .$promise
+          .then(function() {
+          console.log('err')
+          });
+      };
 
 
   }
