@@ -1,6 +1,12 @@
 <ion-view title="Chat">
   <ion-content class="has-header">
-
+    <ion-list>
+    <div class="list card" ng-repeat="personaltt in personaltts.slice().reverse()">
+<ion-item class="item item-body">
+  {{personaltt.timestart}}
+</ion-item>
+</div>
+</ion-list>
   </ion-content>
   <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="NewPTTModal()">
   <i class="icon ion-edit light"></i>

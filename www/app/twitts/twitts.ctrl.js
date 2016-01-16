@@ -68,7 +68,7 @@ $ionicModal.fromTemplateUrl('newtweet.html', {
         Tweet.create($scope.newTweet,
             function (res) {
                 delete $scope.newTweet;
-                $scope.refresh();
+        //        $scope.refresh();
             },
             function (err) {
                 console.log(err)
