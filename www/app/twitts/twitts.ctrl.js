@@ -3,25 +3,28 @@
   angular.module('app')
     .controller('TwittsCtrl', TwittsCtrl);
 
-  function TwittsCtrl($scope, Storage, Backend, $ionicFilterBar, User, $state, Tweet, $location, Like, $ionicModal, $timeout){
-    var data = {}, fn = {};
-    $scope.data = data;
-    $scope.fn = fn;
+  function TwittsCtrl($scope, $ionicFilterBar, User, $state, Tweet, $location, Like, $ionicModal, $timeout){
+//    var data = {}, fn = {};
+//    $scope.data = data;
+//    $scope.fn = fn;
     var filterBarInstance;
     $scope.currentUser = User.getCurrent();
   // $scope.tweets = [];
   //  $scope.tweet = {};
   $scope.newTweet = {};
-  $scope.tweets = [];
+//  $scope.tweets = [];
+  // GET the entered timetable
+  $scope.tweets = Tweet.find({
 
-    $scope.$on('$ionicView.enter', function(){
+  });
+/**    $scope.$on('$ionicView.enter', function(){
       Storage.getTweets().then(function(tweets){
         data.tweets = tweets;
         Backend.getTweets().then(function(tweets){
           data.tweets = tweets;
         });
       });
-    });
+    }); **/
 
     //filter bar shit here
     $scope.showFilterBar = function () {
