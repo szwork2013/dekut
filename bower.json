@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "ionic-material": "~0.4.2",
-    "ionic-filter-bar": "~1.1.1"
+    "ionic-filter-bar": "~1.1.1",
+    "restangular": "~1.5.1"
   }
 }

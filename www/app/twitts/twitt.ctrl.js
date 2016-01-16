@@ -3,21 +3,42 @@
   angular.module('app')
     .controller('TwittCtrl', TwittCtrl, ['lbServices', 'ionic', 'TwittsCtrl']);
 
-  function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location){
-   var data = {}, fn = {};
+  function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location, Restangular){
+/**    var data = {}, fn = {};
     $scope.data = data;
-    $scope.fn = fn;
+   $scope.fn = fn;
 
     Storage.getTweet($stateParams.id).then(function(tweet){
       data.tweet = tweet;
-    });
+    }); **/
 
-      /**  Tweet
+  /**      Tweet
           .find()
           .$promise
           .then(function(tweets) {
             $scope.tweets = tweets;
           }); **/
+
+// using Restangular
+Tweet
+    .find({filter: {where: {id: $stateParams.id}}})
+    .$promise
+    .then(
+    function (res) {
+        $scope.tweet = res[0];
+        /**
+         * Find avatar from the user
+         */
+      /**  Avatar
+            .find({filter: {where: {ownerId: $scope.tweet.ownerId}}})
+            .$promise
+            .then(function(res){
+                $scope.tweet.avatar = res[0].url;
+            }); **/
+    },
+    function (err) {
+
+    });
 
     $scope.currentUser = User.getCurrent();
         $scope.tweet = {};
