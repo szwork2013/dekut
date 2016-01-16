@@ -1,9 +1,24 @@
-<ion-view title="Chat">
+<ion-view title="Personal TimeTable">
   <ion-content class="has-header">
     <ion-list>
     <div class="list card" ng-repeat="personaltt in personaltts.slice().reverse()">
 <ion-item class="item item-body">
-  {{personaltt.timestart}}
+  <b/> UNIT : </b>
+{{personaltt.unit}}
+  <div class="list list-inset">
+    <div class="item">
+      <time>
+        <b/> FROM : </b> {{personaltt.timestart | amCalendar}}
+</time>
+    </div>
+    <div class="item">
+      <time>
+        <b/> TO : </b>
+      {{personaltt.timestop | amCalendar}}
+<time>
+    </div>
+</div>
+
 </ion-item>
 </div>
 </ion-list>

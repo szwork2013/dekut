@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
-   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular'])
+   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment'])
     .config(configBlock)
     .run(runBlock);
 

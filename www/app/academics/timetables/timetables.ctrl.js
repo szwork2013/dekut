@@ -47,7 +47,7 @@
 
       // GET the entered timetable
       $scope.personaltts = Personaltt.find({
-        
+
       });
 
 
