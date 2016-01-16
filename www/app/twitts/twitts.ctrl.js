@@ -13,7 +13,7 @@
   //  $scope.tweet = {};
   $scope.newTweet = {};
 //  $scope.tweets = [];
-  // GET the entered timetable
+  // GET the all twitts
   $scope.tweets = Tweet.find({
 
   });

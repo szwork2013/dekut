@@ -4,13 +4,20 @@
     .controller('TwittCtrl', TwittCtrl, ['lbServices', 'ionic', 'TwittsCtrl']);
 
   function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location){
-    var data = {}, fn = {};
+   var data = {}, fn = {};
     $scope.data = data;
     $scope.fn = fn;
 
     Storage.getTweet($stateParams.id).then(function(tweet){
       data.tweet = tweet;
     });
+
+      /**  Tweet
+          .find()
+          .$promise
+          .then(function(tweets) {
+            $scope.tweets = tweets;
+          }); **/
 
     $scope.currentUser = User.getCurrent();
         $scope.tweet = {};
