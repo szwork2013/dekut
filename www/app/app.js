@@ -201,7 +201,7 @@
     return stopPropagation;
   };
 
-  function runBlock($rootScope, User){
+  function runBlock($rootScope, User, $ionicPlatform){
     $rootScope.safeApply = function(fn){
       var phase = this.$root ? this.$root.$$phase : this.$$phase;
       if(phase === '$apply' || phase === '$digest'){
@@ -216,5 +216,15 @@
     if (User.getCachedCurrent() == null) {
         User.getCurrent();
     }
+    // for ionic push
+    $ionicPlatform.ready(function() {
+  var push = new Ionic.Push({
+    "debug": true
+  });
+
+  push.register(function(token) {
+    console.log("Device token:",token.token);
+  });
+});
   }
 })();
