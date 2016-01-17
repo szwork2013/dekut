@@ -1,6 +1,6 @@
 {
   "name": "ionic-starter",
-  "app_id": "",
+  "app_id": "8bac5b39",
   "gulpStartupTasks": [
     "sass",
     "watch"

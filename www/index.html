@@ -8,12 +8,13 @@
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic" rel="stylesheet" type="text/css">
     <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
     <link rel="stylesheet" href="lib/ionic-filter-bar/dist/ionic.filter.bar.css">
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ionic-platform-web-client/dist/ionic.io.bundle.min.js"></script>
     <script src="lib/angular/angular-resource.js"></script>
     <script src="lib/restangular/dist/restangular.js"></script>
     <script src="lib/moment/moment.js"></script>
@@ -25,7 +26,8 @@
     <script src="app/common/bd.timedistance.js"></script>
     <script src="app/lb-services.js"></script>
     <!-- cordova script (you can setup plugin mocks here) -->
-    <script src="cordova.js"></script>
+    <!-- Cordova is bootstrapped by ionic-platform-web-client, uncomment this if you remove ionic-platform-web-client... -->
+<!-- <script src="cordova.js"></script> -->
     <script src="lib/ionic-filter-bar/dist/ionic.filter.bar.js"></script>
 
 

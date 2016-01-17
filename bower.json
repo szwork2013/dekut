@@ -4,7 +4,8 @@
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.2.0",
     "lodash": "~3.10.1",
-    "moment": "~2.10.6"
+    "moment": "~2.10.6",
+    "ionic-platform-web-client": "~0.2.1"
   },
   "dependencies": {
     "ionic-material": "~0.4.2",

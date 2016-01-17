@@ -23,7 +23,8 @@
     "ionic-plugin-keyboard",
     "cordova-plugin-x-toast",
     "cordova-sqlite-storage",
-    "cordova-plugin-inappbrowser"
+    "cordova-plugin-inappbrowser",
+    "phonegap-plugin-push"
   ],
   "cordovaPlatforms": [
     "android"
