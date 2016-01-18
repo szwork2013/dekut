@@ -14,8 +14,14 @@
           Register for Push
         </button> -->
 
-    <div ng-if="data.tweets.length === 0" class="empty-msg">No Tweets At Moment :(</div>
-  <!--  <div ng-if="data.tweets.length > 0" class="list"> -->
+    <div ng-if="tweets.length === 0" class="card empty-msg">
+      <ion-item class="item item-body">
+        No Tweets At The Moment.
+        <br/>
+        Check your Connectivity and try again.
+      </ion-item>
+        </div>
+  <div ng-if="tweets.length > 0" class="list">
       <ion-list>
       <div class="list card" ng-repeat="tweet in tweets.slice().reverse()">
 
@@ -54,7 +60,7 @@
       </div>
     </ion-list>
     </div>
-    <div ng-if="items !== undefined && !items.length" class="no-results">
+    <div ng-if="tweets !== undefined && !tweets.length" class="no-results">
       <p>No Results</p>
     </div>
   </ion-content>

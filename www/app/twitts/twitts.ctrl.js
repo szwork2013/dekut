@@ -79,9 +79,9 @@ $rootScope.$on('$cordovaPush:tokenReceived', function(event, data) {
     //filter bar shit here
     $scope.showFilterBar = function () {
     filterBarInstance = $ionicFilterBar.show({
-      twitts: $scope.twitts,
-      update: function (filteredTwitts, filterText) {
-        $scope.twitts = filteredTwitts;
+      tweets: $scope.tweets,
+      update: function (filteredTweets, filterText) {
+        $scope.tweets = filteredTweets;
         if (filterText) {
           console.log(filterText);
         }
