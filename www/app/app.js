@@ -2,9 +2,78 @@
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
    'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment',
-    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'dmall.controllers', 'dmall.directives', 'dmall.services'])
+    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'firebase', 'dmall.controllers', 'dmall.directives', 'dmall.services', 'ionic.service.analytics'])
     .config(configBlock)
-    .run(runBlock);
+  //  .run(runBlock);
+    .run(function($ionicPlatform, $ionicAnalytics, $rootScope, $window, $ionicLoading, $ionicPopup) {
+      Parse.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "MhpRKajED4WX773jjJcdqGKDLzeemhEF9rTqpZsl");
+      $ionicPlatform.ready(function() {
+        //ionic.Platform.fullScreen();
+        $ionicAnalytics.register();
+        if(window.cordova && window.cordova.plugins.Keyboard) {
+          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+        }
+        if(window.StatusBar) {
+          // org.apache.cordova.statusbar required
+          StatusBar.styleDefault();
+        }
+        window.parsePlugin.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "1VBlrXLz6De2faWBsEDSMx2b81KBD9Y95Sxg72WV", function() {
+          console.log('Parse initialized successfully.');
+          window.parsePlugin.subscribe('SampleChannel', function() {
+            console.log('Successfully subscribed to SampleChannel.');
+              window.parsePlugin.getInstallationId(function(id) {
+                // update the view to show that we have the install ID
+                console.log('Retrieved install id: ' + id);
+                  // *
+                  //  * Now you can construct an object and save it to your own services, or Parse, and corrilate users to parse installations
+                  //  *
+                  //  var install_data = {
+                  //     installation_id: id,
+                  //     channels: ['SampleChannel']
+                  //  }
+                  //  *
+              }, function(e) {
+                console.log('Failure to retrieve install id.');
+              });
+          }, function(e) {
+              console.log('Failed trying to subscribe to SampleChannel.');
+          });
+        }, function(e) {
+            console.log('Failure to initialize Parse.');
+        });
+      });
+      $rootScope.show = function(text) {
+        $rootScope.loading = $ionicLoading.show({
+          template: text ? text : 'Loading...',
+          animation: 'fade-in',
+          showBackdrop: true,
+          maxWidth: 500,
+          showDelay: 0
+        });
+      };
+      $rootScope.hide = function() {
+        $ionicLoading.hide();
+      };
+      $rootScope.longnotify = function(text) {
+        $rootScope.show(text);
+        $window.setTimeout(function() {
+          $rootScope.hide();
+        }, 2999);
+      };
+      $rootScope.quicknotify = function(text) {
+        $rootScope.show(text);
+        $window.setTimeout(function() {
+          $rootScope.hide();
+        }, 999);
+      };
+      $rootScope.confirm = function(title,text) {
+        var confirmPopup = $ionicPopup.confirm({
+           title: title,
+           template: text
+        });
+        return confirmPopup;
+      };
+    })
 
   function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider, $httpProvider, $ionicAppProvider){
     $stateProvider
@@ -117,7 +186,9 @@
         url: '/dmall',
         views: {
           'menuContent': {
-            templateUrl: 'app/dmall/dmall.html'
+            templateUrl: 'app/dmall/catalog.html',
+            controller: 'CatalogController'
+
           }
         }
       })
