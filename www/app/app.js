@@ -1,11 +1,11 @@
 (function(){
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
-   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment'])
+   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment', 'ngCordova', 'ionic.service.core', 'ionic.service.push'])
     .config(configBlock)
     .run(runBlock);
 
-  function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider, $httpProvider){
+  function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider, $httpProvider, $ionicAppProvider){
     $stateProvider
     .state('loading', {
       url: '/loading',
@@ -51,6 +51,25 @@
         'menuContent': {
           templateUrl: 'app/twitts/twitt.html',
           controller: 'TwittCtrl'
+        }
+      }
+    })
+    // notices logics
+    .state('app.notices', {
+      url: '/notices',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/notices/notices.html',
+          controller: 'NoticesCtrl'
+        }
+      }
+    })
+    .state('app.notice', {
+      url: '/notices/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/notices/notice.html',
+          controller: 'NoticeCtrl'
         }
       }
     })
@@ -174,6 +193,15 @@
             }
         };
     }); **/
+    // push config
+    $ionicAppProvider.identify({
+    // The App ID (from apps.ionic.io) for the server
+    app_id: '8bac5b39',
+    // The public API key all services will use for this app
+    api_key: '760b9a44ef5737e3e54ffdb2d213faa8bdc54a917cf9fd3e',
+    // Set the app to use development pushes
+    dev_push: true
+  });
   }
 
   // catch JavaScript errors
@@ -223,7 +251,7 @@
   });
 
   push.register(function(token) {
-    console.log("Device token:",token.token);
+    console.log("Device token:", token.token);
   });
 });
   }

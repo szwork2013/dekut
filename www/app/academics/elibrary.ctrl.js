@@ -17,8 +17,8 @@ function ElibraryCtrl($scope, User, Elibrary){
 
       })
       .$promise
-      .then(function() {
-      console.log('err')
+      .then(function(err) {
+      console.log(err)
       });
   };
 
