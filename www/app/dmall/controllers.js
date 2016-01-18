@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('dmall.controllers', [])
 
 
 .controller('AppCtrl', function($scope,$rootScope,$ionicHistory,$ionicSideMenuDelegate,$state,cartService,categoryService,Search) {

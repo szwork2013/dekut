@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('dmall.services', [])
 
 
 .factory('Search', function() {

@@ -1,4 +1,4 @@
-angular.module('starter.directives', [])
+angular.module('dmall.directives', [])
 
 
 .directive('ionCatalog', function($location,$state,$ionicHistory,cartService){
@@ -13,7 +13,7 @@ angular.module('starter.directives', [])
   };
   return {
     restrict: 'AEC',
-    templateUrl: 'templates/partials/catalog-item.html',
+    templateUrl: 'app/dmall/partials/catalog-item.html',
     link: link,
     scope: {
       products: '=',
@@ -31,7 +31,7 @@ angular.module('starter.directives', [])
       }
     });
     $ionicModal.fromTemplateUrl(
-      'templates/partials/fancy-select-items.html',{
+      'app/dmall/partials/fancy-select-items.html',{
       'scope': scope
     }).then(function(modal) {
       scope.modal = modal;
@@ -58,7 +58,7 @@ angular.module('starter.directives', [])
   };
   return {
     restrict : 'E',
-    templateUrl: 'templates/partials/fancy-select.html',
+    templateUrl: 'app/dmall/partials/fancy-select.html',
     scope: {
       'product' : '=',
       'optionnumber' : '='
@@ -84,7 +84,7 @@ angular.module('starter.directives', [])
   };
   return {
     restrict: 'AEC',
-    templateUrl: 'templates/partials/cart-item.html',
+    templateUrl: 'app/dmall/partials/cart-item.html',
     link: link,
     scope: {
       cartproducts: '='
@@ -116,7 +116,7 @@ angular.module('starter.directives', [])
   };
   return {
     restrict: 'AEC',
-    templateUrl: 'templates/partials/cart-footer.html',
+    templateUrl: 'app/dmall/partials/cart-footer.html',
     link: link
   };
 })
@@ -124,7 +124,7 @@ angular.module('starter.directives', [])
 
 .directive('ionCartSubFooter', function($state,$rootScope,$location,$ionicHistory,$ionicModal,userService) {
   var link = function(scope, element, attr) {
-    $ionicModal.fromTemplateUrl('templates/login.html', {
+    $ionicModal.fromTemplateUrl('app/authentication/signin.html', {
       scope: scope
     }).then(function(modal) {
       scope.modal = modal;
@@ -180,7 +180,7 @@ angular.module('starter.directives', [])
   };
   return {
     restrict: 'AEC',
-    templateUrl: 'templates/partials/cart-subfooter.html',
+    templateUrl: 'app/dmall/partials/cart-subfooter.html',
     link: link
   };
 })
@@ -196,7 +196,7 @@ angular.module('starter.directives', [])
   };
   return {
     restrict: 'AEC',
-    templateUrl: 'templates/partials/checkout-form.html',
+    templateUrl: 'app/dmall/partials/checkout-form.html',
     scope: {
       userinfo: '='
     },
@@ -223,8 +223,8 @@ angular.module('starter.directives', [])
     },
     initPaymentUI: function () {
       var clientIDs = {
-        "PayPalEnvironmentProduction": "AZbp-aLjb101DSEWcTdlpJIYsttoth0bYxLeLTu8c0p31xyvZxiAQqZ8u21bU_MLrnIp4J1gmnO2zmK_",
-        "PayPalEnvironmentSandbox": "AcMDnMJPrN3gB3K6JglbNggRbmKiYx-FWYZqHheY9ddJar9gCaLqDSo5Yrr0UAbWSJojXqla_O4j0Lyz"
+        "PayPalEnvironmentProduction": "CHANGE_THIS",
+        "PayPalEnvironmentSandbox": "CHANGE_THIS"
       };
       PayPalMobile.init(clientIDs, paypalApp.onPayPalMobileInit);
     },
@@ -335,7 +335,7 @@ angular.module('starter.directives', [])
   };
   return {
     restrict: 'AEC',
-    templateUrl: 'templates/partials/checkout-footer.html',
+    templateUrl: 'app/dmall/checkout-footer.html',
     link: link
   };
 })
@@ -384,7 +384,7 @@ angular.module('starter.directives', [])
         userinfo: '=',
       },
       link: link,
-      templateUrl: 'templates/partials/checkout-name.html'
+      templateUrl: 'app/dmall/partials/checkout-name.html'
     };
 })
 
@@ -432,7 +432,7 @@ angular.module('starter.directives', [])
         userinfo: '=',
       },
       link: link,
-      templateUrl: 'templates/partials/checkout-account.html'
+      templateUrl: 'app/dmall/partials/checkout-account.html'
     };
 })
 
@@ -530,10 +530,11 @@ angular.module('starter.directives', [])
         userinfo: '=',
       },
       link: link,
-      templateUrl: 'templates/partials/checkout-address.html'
+      templateUrl: 'app/dmall/checkout-address.html'
     };
 })
 
+// use this directive incase of verification
 /*
 .directive('checkoutLicence', function($cordovaCamera) {
     var link = function(scope, element, attr) {
@@ -589,6 +590,7 @@ angular.module('starter.directives', [])
     }
 });
 
+// product image directive
 /*
 .directive('ionProductImage', function($timeout, $ionicModal, $ionicSlideBoxDelegate) {
     var link = function(scope, element, attr) {

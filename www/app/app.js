@@ -1,7 +1,8 @@
 (function(){
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
-   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment', 'ngCordova', 'ionic.service.core', 'ionic.service.push'])
+   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment',
+    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'dmall.controllers', 'dmall.directives', 'dmall.services'])
     .config(configBlock)
     .run(runBlock);
 
@@ -117,6 +118,33 @@
         views: {
           'menuContent': {
             templateUrl: 'app/dmall/dmall.html'
+          }
+        }
+      })
+      .state('app.catalog', {
+        url: '/catalog',
+        views: {
+          'menuContent' :{
+            templateUrl: "app/dmall/catalog.html",
+            controller: 'CatalogController'
+          }
+        }
+      })
+      .state('app.search', {
+        url: '/search',
+        views: {
+          'menuContent' :{
+            templateUrl: "app/dmall/catalog.html",
+            controller: 'SearchController'
+          }
+        }
+      })
+      .state('app.category', {
+        url: "/category/:categoryId",
+        views: {
+          'menuContent': {
+            templateUrl: "app/dmall/catalog.html",
+            controller: 'CategoryController'
           }
         }
       })
