@@ -870,7 +870,12 @@ angular.module('dmall.services', [])
   }.bind(this);
 })
 
-
+// user service, get user details
+/**
+**  phonenumber
+**  Hostel/location
+**
+**/
 .service('userService', function($rootScope,$q) {
  	this.userInfo = {};
 	this.register = function(userInfo) {

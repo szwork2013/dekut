@@ -254,7 +254,7 @@ angular.module('dmall.directives', [])
     configuration: function () {
       // for more options see `paypal-mobile-js-helper.js`
       var config = new PayPalConfiguration({
-          merchantName: "JSapp.me",
+          merchantName: "DekutApp",
           merchantPrivacyPolicyURL: "",
           merchantUserAgreementURL: ""
       });
