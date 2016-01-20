@@ -2,14 +2,14 @@
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
    'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment',
-    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'firebase', 'dmall.controllers', 'dmall.directives', 'dmall.services', 'ionic.service.analytics'])
+    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'dmall.controllers', 'dmall.directives', 'dmall.services', 'ionic.service.analytics'])
     .config(configBlock)
   //  .run(runBlock);
 
     .run(function($ionicPlatform, $ionicAnalytics, $rootScope, $window, $ionicLoading, $ionicPopup) {
     //  APP_ID=PARSE_APP_ID --variable CLIENT_KEY=PARSE_CLIENT_KEY
-  //    Parse.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "fYSt6pE2shi7qtIxULpvLgIw5XoedWXU7awRFmTg");
-   Parse.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "MhpRKajED4WX773jjJcdqGKDLzeemhEF9rTqpZsl");
+      Parse.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "jvC7wu0VfMnpclrNvLKsGmAXz5ZoVcMdGFYrbGUI");
+  // Parse.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "MhpRKajED4WX773jjJcdqGKDLzeemhEF9rTqpZsl");
       $ionicPlatform.ready(function() {
         //ionic.Platform.fullScreen();
         $ionicAnalytics.register();
@@ -20,9 +20,9 @@
           // org.apache.cordova.statusbar required
           StatusBar.styleDefault();
         }
-     window.parsePlugin.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "1VBlrXLz6De2faWBsEDSMx2b81KBD9Y95Sxg72WV", function() {
+//     window.parsePlugin.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "1VBlrXLz6De2faWBsEDSMx2b81KBD9Y95Sxg72WV", function() {
 
-//      window.parsePlugin.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "fYSt6pE2shi7qtIxULpvLgIw5XoedWXU7awRFmTg", function() {
+     window.parsePlugin.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "jvC7wu0VfMnpclrNvLKsGmAXz5ZoVcMdGFYrbGUI", function() {
           console.log('Parse initialized successfully.');
           window.parsePlugin.subscribe('SampleChannel', function() {
             console.log('Successfully subscribed to SampleChannel.');
