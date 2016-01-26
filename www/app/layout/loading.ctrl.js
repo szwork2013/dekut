@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('LoadingCtrl', LoadingCtrl);
 
-  function LoadingCtrl($state, $ionicHistory, Storage){
+  function LoadingCtrl($state, $ionicHistory, Storage, User){
     $ionicHistory.nextViewOptions({
       disableAnimate: true,
       disableBack: true

@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('LayoutCtrl', LayoutCtrl);
 
-  function LayoutCtrl($state, $scope, $ionicHistory, Storage){
+  function LayoutCtrl($state, $scope, $ionicHistory, Storage, User){
     var fn = {};
     $scope.fn = fn;
 
