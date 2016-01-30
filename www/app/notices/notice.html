@@ -1,0 +1,28 @@
+</ion-view>
+<ion-view title="Notice Item">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+  </ion-nav-buttons>
+  <ion-content class="content double-padding">
+  <!--  <ion-spinner class="hcenter voffset" ng-show="!vm.item"></ion-spinner> -->
+  <!--  <div class="list" ng-show="vm.item"> -->
+   <!-- <img class="hero has-mask" ng-src={{vm.item.image}}> -->
+   <div class="hero has-mask">
+   <img class="hero has-mask" ng-src={{notice.image}}>
+ </div>
+      <div class="mid-bar dark-bg z1 padding">
+         <h3> {{notice.name}} </h3>
+      </div>
+    <!-- align  content to center and jump to next line -->
+    <div class="item item-body">
+{{notice.description}}
+    </div>
+    </div>
+    <div class="double-padding">
+    <!--  <button class="button icon-left ion-bag button-positive button-block" ng-click="PlaceBid()">Do SomeThing</button> -->
+    <p class="subdued">From:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.startDate | amCalendar}}</strong></p>
+    <p class="subdued">To:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.endDate | amCalendar}}</strong></p>
+
+    </div>
+  </ion-content>
+</ion-view>

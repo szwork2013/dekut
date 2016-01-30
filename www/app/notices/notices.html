@@ -15,29 +15,23 @@
      <ion-list>
      <div class="list card" ng-repeat="notice in notices.slice().reverse()">
 
-       <div class="item item-avatar"  ui-sref="app.notice({id: notice.id})">
-         <img ng-src="{{notice.avatar}}">
-         <h2>{{notice.ownerUsername}}</h2>
-         <p><i class="icon ion-ios-clock"></i> {{notice.date | timeDistance}} Ago</p>
+       <div class="item"  ui-sref="app.notice({id: notice.id})">
+      <!--   <img ng-src="{{notice.avatar}}"> -->
+         <h2>{{notice.name}}</h2>
 
        </div>
 
        <div class="item item-body" ui-sref="app.notice({id: notice.id})">
        <img class="full-image" ng-src="{{notice.image}}">
          <p>
-         {{notice.content}}
+         {{notice.description}}
          </p>
-        <!-- <p>
-           <a href="#" class="subdued">1 Like</a>
-
-           </a>
-           <a href="#" class="subdued">5 Comments</a>
-         </p> -->
+         <p class="subdued"><i class="icon ion-ios-clock"></i> {{notice.startDate | amCalendar}}</p>
        </div>
 
        <div class="item tabs tabs-secondary tabs-icon-left">
          <a class="tab-item">
-         <!--    {{tweet.likes}} --> Share
+          Share
              <i class="ion-share"></i></a>
 
          <a class="tab-item" ui-sref="app.notice({id: notice.id})">
@@ -50,10 +44,11 @@
      </div>
    </ion-list>
    </div>
-   <div ng-if="notices !== undefined && !notices.length" class="no-results">
+   <div ng-if="notices !== undefined && !notices.length" class="no-results card item-body">
      <p>No Results, Bruh :(</p>
    </div>
  </ion-content>
+
  <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="NoticeModal()">
  <i class="icon ion-edit light"></i>
 </button>
