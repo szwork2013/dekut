@@ -14,13 +14,6 @@
     <ion-header-bar class="bar-positive">
       <h1 class="title">Menu</h1>
     </ion-header-bar>
-  <!--  <ion-content>
-      <div class="list">
-        <a class="item item-icon-left" ui-sref="app.twitts" nav-clear menu-close><i class="icon ion-social-twitter"></i> Twitts</a>
-        <a class="item item-icon-left" ui-sref="app.settings" nav-clear menu-close><i class="icon ion-android-options"></i> Paramètres</a>
-        <a class="item item-icon-left" ng-click="fn.logout()" nav-clear menu-close><i class="icon ion-log-out"></i> Déconnexion</a>
-      </div>
-    </ion-content> -->
     <ion-content has-header="true" class="ionic" scroll="true" ng-controller="ProfileCtrl">
       <ion-list class="disable-user-behavior">
         <ion-list>
@@ -118,16 +111,5 @@
          <a class="tab-item"href="http://www.facebook.com/DekutApp"> <i class="icon ion-social-facebook"></i> FaceBook </a>
        </div>
     </ion-content>
-  </ion-side-menu>
-  <!-- for right menu with Shopping cart -->
-  <ion-side-menu side="right">
-    <ion-header-bar class="bar-dark">
-      <h1 class="title">My Shopping Bag</h1>
-    </ion-header-bar>
-    <ion-content class='has-footer has-subfooter'>
-      <ion-cart cartproducts='cartProducts'></ion-cart>
-    </ion-content>
-    <ion-cart-sub-footer menu-close></ion-cart-sub-footer>
-    <ion-cart-footer menu-close></ion-cart-footer>
   </ion-side-menu>
 </ion-side-menus>

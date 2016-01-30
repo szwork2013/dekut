@@ -1,14 +1,14 @@
 (function(){
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
-   'app.register', 'app.login', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment',
-    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'dmall.controllers', 'dmall.directives', 'dmall.services', 'ionic.service.analytics'])
+   'app.register', 'app.signin', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment',
+    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'ionic.service.analytics'])
     .config(configBlock)
   //  .run(runBlock);
 
-    .run(function($ionicPlatform, $ionicAnalytics, $rootScope, $window, $ionicLoading, $ionicPopup) {
+    .run(function($ionicPlatform, $ionicAnalytics, $window, $ionicPopup) {
     //  APP_ID=PARSE_APP_ID --variable CLIENT_KEY=PARSE_CLIENT_KEY
-      Parse.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "jvC7wu0VfMnpclrNvLKsGmAXz5ZoVcMdGFYrbGUI");
+  //    Parse.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "jvC7wu0VfMnpclrNvLKsGmAXz5ZoVcMdGFYrbGUI");
   // Parse.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "MhpRKajED4WX773jjJcdqGKDLzeemhEF9rTqpZsl");
       $ionicPlatform.ready(function() {
         //ionic.Platform.fullScreen();
@@ -20,8 +20,14 @@
           // org.apache.cordova.statusbar required
           StatusBar.styleDefault();
         }
-//     window.parsePlugin.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "1VBlrXLz6De2faWBsEDSMx2b81KBD9Y95Sxg72WV", function() {
 
+        // get user auth status
+        if (User.getCachedCurrent() == null) {
+            User.getCurrent();
+        }
+      });
+//     window.parsePlugin.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "1VBlrXLz6De2faWBsEDSMx2b81KBD9Y95Sxg72WV", function() {
+/**
      window.parsePlugin.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "jvC7wu0VfMnpclrNvLKsGmAXz5ZoVcMdGFYrbGUI", function() {
           console.log('Parse initialized successfully.');
           window.parsePlugin.subscribe('SampleChannel', function() {
@@ -77,7 +83,7 @@
            template: text
         });
         return confirmPopup;
-      };
+      }; **/
     })
 
   function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider, $httpProvider, $ionicAppProvider){
@@ -87,11 +93,11 @@
       template: '<ion-spinner style="text-align: center; margin-top: 50%;"></ion-spinner>',
       controller: 'LoadingCtrl'
     })
-    .state('login', {
+/**    .state('login', {
       url: '/login',
       templateUrl: 'app/authentication/login.html',
       controller: 'LoginCtrl'
-    })
+    }) **/
     // auth logics
     .state('signin', {
       url: '/signin',
@@ -285,7 +291,7 @@
       };
     }]);
     // interceptors
-/**    $httpProvider.interceptors.push(function($q, $location) {
+   $httpProvider.interceptors.push(function($q, $location) {
         return {
             responseError: function(rejection) {
                 console.log("Redirect");
@@ -296,7 +302,7 @@
                 return $q.reject(rejection);
             }
         };
-    }); **/
+    });
     // push config
     $ionicAppProvider.identify({
     // The App ID (from apps.ionic.io) for the server

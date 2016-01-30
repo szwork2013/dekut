@@ -1,4 +1,4 @@
-angular.module('app.login', ['lbServices', 'ionic'])
+angular.module('app.signin', ['lbServices', 'ionic'])
     .controller('SigninCtrl', function ($scope, User, $location, $ionicPopup, $ionicLoading) {
         if (User.getCachedCurrent()!==null) {
            $location.path('app/twitts');
