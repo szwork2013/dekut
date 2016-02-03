@@ -1,9 +1,9 @@
 (function(){
   'use strict';
   angular.module('app')
-    .controller('ProductCtrl', NoticeCtrl, ['lbServices', 'ionic', 'ProductCtrl']);
+    .controller('ProductCtrl', ProductCtrl, ['lbServices', 'ionic', 'ProductCtrl']);
 
-  function ProductCtrl($scope, $stateParams, $ionicModal, User, Product, Avatar, $location){
+  function ProductCtrl($scope, $stateParams, $ionicModal, User, Product, $location){
 
 Product
     .find({
