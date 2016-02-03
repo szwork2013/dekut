@@ -197,8 +197,8 @@
         url: '/dmall',
         views: {
           'menuContent': {
-            templateUrl: 'app/dmall/catalog.html',
-            controller: 'CatalogController'
+            templateUrl: 'app/dmall/dmall.html',
+            controller: 'ProductsCtrl'
 
           }
         }

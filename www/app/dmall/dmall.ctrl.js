@@ -8,9 +8,9 @@
 
     $scope.showFilterBar = function () {
     filterBarInstance = $ionicFilterBar.show({
-      notices: $scope.notices,
-      update: function (filteredNotices, filterText) {
-        $scope.notices = filteredNotices;
+      products: $scope.products,
+      update: function (filteredProducts, filterText) {
+        $scope.products = filteredProducts;
         if (filterText) {
           console.log(filterText);
         }
