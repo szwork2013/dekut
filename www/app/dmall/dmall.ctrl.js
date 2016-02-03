@@ -6,6 +6,7 @@
 
     function ProductsCtrl($scope, $ionicFilterBar, User, $state, Product, $location, $ionicModal, $timeout, $rootScope, $ionicUser, $ionicPush){
 
+var filterBarInstance = {};
     $scope.showFilterBar = function () {
     filterBarInstance = $ionicFilterBar.show({
       products: $scope.products,

@@ -203,6 +203,16 @@
           }
         }
       })
+      // each product detail as per id
+    .state('app.product', {
+        url: '/product/:id',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/dmall/product.html',
+            controller: 'ProductCtrl'
+          }
+        }
+      })
       .state('app.catalog', {
         url: '/catalog',
         views: {

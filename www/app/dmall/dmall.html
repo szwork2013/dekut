@@ -13,30 +13,27 @@
    </div>
  <div ng-if="products.length > 0" class="list">
      <ion-list>
-     <div class="list card" ng-repeat="notice in products.slice().reverse()">
+     <div class="list card" ng-repeat="product in products.slice().reverse()">
 
-       <div class="item"  ui-sref="app.notice({id: notice.id})">
+       <div class="item"  ui-sref="app.products({id: product.id})">
       <!--   <img ng-src="{{notice.avatar}}"> -->
-         <h2>{{notice.name}}</h2>
+         <h2>{{product.name}}</h2>
 
        </div>
 
-       <div class="item item-body" ui-sref="app.notice({id: notice.id})">
-       <img class="full-image" ng-src="{{notice.image}}">
+       <div class="item item-body" ui-sref="app.product({id: product.id})">
+       <img class="full-image" ng-src="{{product.image}}">
          <p>
-         {{notice.description}}
+         {{product.description}}
          </p>
-         <p class="subdued"><i class="icon ion-ios-clock"></i> {{notice.startDate | amCalendar}}</p>
+         <p class="subdued"><i class="icon ion-ios-clock"></i>KSH {{product.price}}</p>
        </div>
 
        <div class="item tabs tabs-secondary tabs-icon-left">
-         <a class="tab-item">
-          Share
-             <i class="ion-share"></i></a>
 
-         <a class="tab-item" ui-sref="app.notice({id: notice.id})">
-           <i class="icon ion-more"></i>
-         Read More
+         <a class="tab-item" ui-sref="app.product({id: product.id})">
+           <i class="icon ion-cart"></i>
+         Shop
          </a>
          <a class="button-icon icon ion-android-more-vertical"></a>
 
