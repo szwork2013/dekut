@@ -255,7 +255,7 @@
         url: '/eservices',
         views: {
           'menuContent': {
-            templateUrl: 'app/school/eservices.html',
+            templateUrl: 'app/school/eservices/eservices.html',
             controller: 'EservicesCtrl'
           }
         }
