@@ -251,15 +251,52 @@
           }
         }
       })
+      // eservices logics
       .state('app.eservices', {
         url: '/eservices',
         views: {
           'menuContent': {
-            templateUrl: 'app/school/eservices/eservices.html',
+            templateUrl: 'app/school/eservices/dashboard.html',
             controller: 'EservicesCtrl'
           }
         }
       })
+      .state('app.complaints', {
+        url: '/complaints',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/eservices/complaints.html',
+            controller: 'EservicesCtrl'
+          }
+        }
+      })
+      .state('app.suggestions', {
+        url: '/suggestions',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/eservices/suggestions.html',
+            controller: 'EservicesCtrl'
+          }
+        }
+      })
+      .state('app.inquiry', {
+        url: '/inquiry',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/eservices/inquiry.html',
+            controller: 'EservicesCtrl'
+          }
+        }
+      })
+      .state('app.feedback', {
+          url: '/feedback',
+          views: {
+            'menuContent': {
+              templateUrl: 'app/school/eservices/feedback.html',
+              controller: 'EservicesCtrl'
+            }
+          }
+        })
       .state('app.about', {
         url: '/about',
         views: {

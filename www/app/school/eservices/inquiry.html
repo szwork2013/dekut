@@ -1,0 +1,30 @@
+<ion-view title="Inquiries">
+  <ion-content class="has-header">
+           <form novalidate="double-padding novalidate" name="PTTForm">
+  <div class="content item-body">
+
+           <label class="item item-input item-floating-label">
+               <span class="input-label">Content</span>
+           <input type="text" placeholder="What do you want to inquire about?" ng-model="eservice.content" required/>
+           </label>
+           <label class="item item-input item-floating-label">
+               <span class="input-label">PhoneNumber</span>
+           <input type="text" placeholder="Your PhoneNumber" ng-model="eservice.number" required/>
+           </label>
+           <label class="item item-input item-floating-label">
+               <span class="input-label">Email</span>
+           <input type="text" placeholder="Your Email" ng-model="eservice.email" required/>
+           </label>
+
+  </div>
+  <div class="padding">
+
+  <button  class="button button-full button-positive icon-left ion-paper-airplane"
+                   data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="PostInquiry()">
+  Send inquiry
+               </button>
+             </div>
+  </form>
+
+  </ion-content>
+</ion-view>
