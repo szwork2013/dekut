@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('ProductCtrl', ProductCtrl, ['lbServices', 'ionic', 'ProductCtrl']);
 
-  function ProductCtrl($scope, $stateParams, $ionicModal, User, Product, $location){
+  function ProductCtrl($scope, $stateParams, $ionicModal, User, Product, $location, Category){
 
 Product
     .find({

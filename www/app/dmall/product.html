@@ -8,20 +8,29 @@
   <!--  <div class="list" ng-show="vm.item"> -->
    <!-- <img class="hero has-mask" ng-src={{vm.item.image}}> -->
    <div class="hero has-mask">
-   <img class="hero has-mask" ng-src={{product.image}}>
+   <img class="hero has-mask" ng-src={{product.images[0]}}>
  </div>
       <div class="mid-bar dark-bg z1 padding">
          <h3> {{product.name}} </h3>
+         <h4>KSH {{product.price}} </h4>
+         <p class="subdued"> {{product.categoryName}} </p>
       </div>
     <!-- align  content to center and jump to next line -->
+    <div class="card">
     <div class="item item-body">
 {{product.description}}
     </div>
     </div>
+  </div>
     <div class="double-padding">
-  <!--  <p class="subdued">From:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.startDate | amCalendar}}</strong></p>
-  <  <p class="subdued">To:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.endDate | amCalendar}}</strong></p> -->
+      <div class="card">
+        <div class="item item-body">
 
+   <p>Payment Method:   <i class="icon ion-cash"></i><strong>    On Delivery</strong></p>
+<!--   <p class="subdued">To:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.endDate | amCalendar}}</strong></p> -->
+
+<p>Type Of Delivery:   <i class="icon ion-android-bus"></i><strong>   <!--{{product.deliverytype}} --> Free </strong></p>
     </div>
+  </div>
   </ion-content>
 </ion-view>
