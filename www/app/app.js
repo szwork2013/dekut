@@ -178,8 +178,8 @@
       url: '/results',
       views: {
         'menuContent': {
-          templateUrl: 'app/academics/results.html',
-          controller: 'TimetablesCtrl'
+          templateUrl: 'app/academics/results/results.html',
+          controller: 'ResultsCtrl'
         }
       }
     })
