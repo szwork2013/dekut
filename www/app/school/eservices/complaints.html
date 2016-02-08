@@ -1,0 +1,37 @@
+<ion-view title="Complaints">
+  <ion-content class="has-header">
+           <form novalidate="double-padding novalidate" name="PTTForm">
+  <div class="content item-body">
+        <!--   <label class="item item-input item-floating-label">
+               <span class="input-label">Type</span>
+           <input type="text" placeholder="Type Of Eservice" ng-model="eservice.type" required>
+         </label> -->
+           <label class="item item-input item-floating-label">
+               <span class="input-label">Content</span>
+           <input type="text" placeholder="Content Of Complaint" ng-model="eservice.content" required>
+           </label>
+           <label class="item item-input item-floating-label">
+               <span class="input-label">PhoneNumnber</span>
+           <input type="text" placeholder="Phone Number" ng-model="eservice.phonenumber" required>
+           </label>
+           <label class="item item-input item-floating-label">
+               <span class="input-label">Email</span>
+           <input type="text" placeholder="Email" ng-model="eservice.email" required>
+           </label>
+
+  </div>
+<div class="padding">
+  <button  class="button button-full button-positive icon-left ion-paper-airplane"
+                   data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="PostComplaint()">
+  Send
+               </button>
+             </div>
+  </form>
+
+  </ion-content>
+
+      <div class="bar bar-footer bar-assertive">
+        <h1 class="title">        <i class="icon-only ion-lightbulb"></i>
+You can saty anonymous by not including your phonenumber </h1>
+      </div>
+</ion-view>

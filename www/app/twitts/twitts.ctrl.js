@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('TwittsCtrl', TwittsCtrl);
 
-  function TwittsCtrl($scope, $ionicFilterBar, User, $state, Tweet, $location, Like, $ionicModal, $timeout, $rootScope, $ionicUser, $ionicPush){
+  function TwittsCtrl($scope, $ionicFilterBar, User, $state, Tweet, $location, Like, $ionicModal, $timeout, $rootScope, $ionicUser, $ionicPush, ionicToast){
 //    var data = {}, fn = {};
 //    $scope.data = data;
 //    $scope.fn = fn;
@@ -89,6 +89,11 @@ $rootScope.$on('$cordovaPush:tokenReceived', function(event, data) {
     });
   };
 
+//toast maneno's
+$scope.hideToast = function(){
+  ionicToast.hide();
+};
+
 // modal for new tweet
 $ionicModal.fromTemplateUrl('newtweet.html', {
         scope: $scope,
@@ -122,6 +127,9 @@ $ionicModal.fromTemplateUrl('newtweet.html', {
             function (res) {
                 delete $scope.newTweet;
         //        $scope.refresh();
+        //        //show toast
+               ionicToast.show('Your New Tweet Has Been Posted.', 'bottom', true, 2500);
+               $scope.hideToast();
             },
             function (err) {
                 console.log(err)

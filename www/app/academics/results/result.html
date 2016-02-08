@@ -1,0 +1,64 @@
+</ion-view>
+<ion-view title="Result for {{result.semester}}">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header content">
+    <div class="item-body list">
+      <div class="card item item-body">
+<p/>
+<div class="progress-wrapper">
+  <h2 align="center"> <b>{{result.unit1}}</b></h2>
+
+      <div
+    round-progress
+    max="100"
+    current="result.mark1"
+    color="#45ccce"
+    bgcolor="#eaeaea"
+    radius="50"
+    stroke="10"
+    semi="false"
+    rounded="true"
+    clockwise="true"
+    responsive="false"
+    duration="3500"
+    animation="easeInOutQuart"
+    animation-delay="10" align="center">
+    </div>
+  </div>
+    <div class="padding">
+      <h3 align="center">  Status: <b> {{result.status}} </b> </h3>
+      <h3 align="center">Unit Marks: <b> {{result.mark1}} </b> </h3>
+    </div>
+  </div>
+  <div class="card item item-body">
+<p/>
+<div class="progress-wrapper">
+<h2 align="center"> <b>{{result.unit2}}</b></h2>
+
+  <div
+round-progress
+max="100"
+current="result.mark2"
+color="#45ccce"
+bgcolor="#eaeaea"
+radius="50"
+stroke="10"
+semi="false"
+rounded="true"
+clockwise="true"
+responsive="false"
+duration="3500"
+animation="easeInOutQuart"
+animation-delay="10" align="center">
+</div>
+</div>
+<div class="padding">
+  <h3 align="center">  Status: <b> {{result.status}} </b> </h3>
+  <h3 align="center">Unit Marks: <b> {{result.mark2}} </b> </h3>
+</div>
+</div>
+    </div>
+  </ion-content>
+</ion-view>

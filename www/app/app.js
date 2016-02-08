@@ -2,7 +2,7 @@
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
    'app.register', 'app.signin', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment',
-    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'ionic.service.analytics'])
+    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'ionic.service.analytics', 'ionic-toast', 'ionicShop', 'angular-svg-round-progress'])
     .config(configBlock)
   //  .run(runBlock);
 
@@ -178,8 +178,17 @@
       url: '/results',
       views: {
         'menuContent': {
-          templateUrl: 'app/academics/results.html',
-          controller: 'TimetablesCtrl'
+          templateUrl: 'app/academics/results/results.html',
+          controller: 'ResultsCtrl'
+        }
+      }
+    })
+    .state('app.result', {
+      url: '/result/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/academics/results/result.html',
+          controller: 'ResultCtrl'
         }
       }
     })
@@ -197,9 +206,19 @@
         url: '/dmall',
         views: {
           'menuContent': {
-            templateUrl: 'app/dmall/catalog.html',
-            controller: 'CatalogController'
+            templateUrl: 'app/dmall/dmall.html',
+            controller: 'ProductsCtrl'
 
+          }
+        }
+      })
+      // each product detail as per id
+    .state('app.product', {
+        url: '/product/:id',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/dmall/product.html',
+            controller: 'ProductCtrl'
           }
         }
       })
@@ -241,15 +260,52 @@
           }
         }
       })
+      // eservices logics
       .state('app.eservices', {
         url: '/eservices',
         views: {
           'menuContent': {
-            templateUrl: 'app/school/eservices.html',
+            templateUrl: 'app/school/eservices/dashboard.html',
             controller: 'EservicesCtrl'
           }
         }
       })
+      .state('app.complaints', {
+        url: '/complaints',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/eservices/complaints.html',
+            controller: 'EservicesCtrl'
+          }
+        }
+      })
+      .state('app.suggestions', {
+        url: '/suggestions',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/eservices/suggestions.html',
+            controller: 'EservicesCtrl'
+          }
+        }
+      })
+      .state('app.inquiry', {
+        url: '/inquiry',
+        views: {
+          'menuContent': {
+            templateUrl: 'app/school/eservices/inquiry.html',
+            controller: 'EservicesCtrl'
+          }
+        }
+      })
+      .state('app.feedback', {
+          url: '/feedback',
+          views: {
+            'menuContent': {
+              templateUrl: 'app/school/eservices/feedback.html',
+              controller: 'EservicesCtrl'
+            }
+          }
+        })
       .state('app.about', {
         url: '/about',
         views: {

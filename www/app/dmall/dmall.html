@@ -6,77 +6,46 @@
    </ion-nav-buttons>
 
  <ion-content class="has-header">
-   <div ng-if="notices.length === 0" class="card empty-msg">
+   <div ng-if="products.length === 0" class="card empty-msg">
 <ion-item class="item item-body">
-  No Notices At The Moment. Move On!
+  No Products At The Moment. Move On! <i class="ion-sad"></i>
 </ion-item>
    </div>
- <div ng-if="notices.length > 0" class="list">
+ <div ng-if="products.length > 0" class="list">
      <ion-list>
-     <div class="list card" ng-repeat="notice in notices.slice().reverse()">
+     <div class="list card" ng-repeat="product in products.slice().reverse()">
 
-       <div class="item"  ui-sref="app.notice({id: notice.id})">
+       <div class="item"  ui-sref="app.products({id: product.id})">
       <!--   <img ng-src="{{notice.avatar}}"> -->
-         <h2>{{notice.name}}</h2>
+         <h2>{{product.name}}</h2>
 
        </div>
 
-       <div class="item item-body" ui-sref="app.notice({id: notice.id})">
-       <img class="full-image" ng-src="{{notice.image}}">
+       <div class="item item-body" ui-sref="app.product({id: product.id})">
+       <img class="full-image" ng-src="{{product.image}}">
          <p>
-         {{notice.description}}
+         {{product.description}}
          </p>
-         <p class="subdued"><i class="icon ion-ios-clock"></i> {{notice.startDate | amCalendar}}</p>
+         <p class="subdued"><i class="icon ion-pricetags"></i> KSH  {{product.price}}</p>
        </div>
 
        <div class="item tabs tabs-secondary tabs-icon-left">
-         <a class="tab-item">
-          Share
-             <i class="ion-share"></i></a>
 
-         <a class="tab-item" ui-sref="app.notice({id: notice.id})">
-           <i class="icon ion-more"></i>
-         Read More
+         <a class="tab-item" ui-sref="app.product({id: product.id})">
+           <i class="icon ion-android-cart"></i>
+         Order
          </a>
-         <a class="button-icon icon ion-android-more-vertical"></a>
 
        </div>
      </div>
    </ion-list>
    </div>
-   <div ng-if="notices !== undefined && !notices.length" class="no-results card item-body">
+   <div ng-if="products !== undefined && !products.length" class="no-results card item-body">
      <p>No Results, Bruh :(</p>
    </div>
  </ion-content>
-
- <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="NoticeModal()">
- <i class="icon ion-edit light"></i>
+<!--
+ <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="ProductsModal()">
+ <i class="icon ion-edit light"></i> -->
 </button>
-<script id="newnotice.html" type="text/ng-template">
-    <ion-modal-view class="ionic">
-        <header class="bar bar-header bar-positive flat">
-<h1 class="title fab-left">Create A Notice</h1>
-<button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
-</header>
-<ion-content class="has-header">
-        <form novalidate="double-padding novalidate" name="noticeForm">
-<div class="content item-body">
-        <label class="item item-input item-floating-label">
-            <span class="input-label">Content of Notice</span>
-        <textarea type="text" placeholder="Content of Notice" ng-model="newNotice.content" required>
-        </textarea>
-        </label>
-</div>
-
-<button ng-disabled="!noticeForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
-                data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="PostNotice()">
-Send
-            </button>
-</form>
-
-</ion-content>
-    </ion-modal-view>
-</script>
-
-
 </ion-view>

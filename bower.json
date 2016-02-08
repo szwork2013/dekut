@@ -15,6 +15,9 @@
     "ionic-filter-bar": "~1.1.1",
     "restangular": "~1.5.1",
     "angular-moment": "~0.10.3",
-    "moment": "~2.11.1"
+    "moment": "~2.11.1",
+    "ionic-toast": "~0.2.0",
+    "ionic-shop": "*",
+    "ionic-content-banner": "~1.0.1"
   }
 }
