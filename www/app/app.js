@@ -183,6 +183,15 @@
         }
       }
     })
+    .state('app.result', {
+      url: '/result/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/academics/results/result.html',
+          controller: 'ResultCtrl'
+        }
+      }
+    })
     .state('app.elibrary', {
       url: '/elibrary',
       views: {
