@@ -11,7 +11,6 @@ plugins/
 platforms/
 
 # when use sass, do not commit css files
-/www/css/
 /www/app/oldjs
 /www/app/dmall1
 
