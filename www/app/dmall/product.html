@@ -33,7 +33,36 @@
     </div>
   </div>
   </ion-content>
-  <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="MakeOrder()">
+  <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="OrderModal()">
   <i class="icon ion-bag light"></i>
  </button>
+ <script id="makeorder.html" type="text/ng-template">
+     <ion-modal-view class="ionic">
+         <header class="bar bar-header bar-positive flat">
+ <h1 class="title fab-left">Make An Order</h1>
+ <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+ </header>
+ <ion-content class="has-header">
+         <form novalidate="double-padding novalidate" name="noticeForm">
+ <div class="content item-body">
+         <label class="item item-input item-floating-label">
+             <span class="input-label">Location For Delivery</span>
+         <input type="text" placeholder="Location For Delivery" ng-model="newOrder.location" required/>
+         </label>
+         <label class="item item-input item-floating-label">
+             <span class="input-label">Other Details</span>
+         <input type="text" placeholder="Further Details To Supplier" ng-model="newOrder.details" required/>
+         </label>
+ </div>
+
+ <button ng-disabled="!noticeForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
+                 data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="MakeOrder()">
+ Send
+             </button>
+ </form>
+
+ </ion-content>
+     </ion-modal-view>
+ </script>
+
 </ion-view>
