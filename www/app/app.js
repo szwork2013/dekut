@@ -2,7 +2,7 @@
   'use strict';
   angular.module('app', ['ionic', 'ngResource', 'ionic-material', 'lbServices', 'bd.timedistance',
    'app.register', 'app.signin', 'app.profile', 'jett.ionic.filter.bar', 'restangular', 'angularMoment',
-    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'ionic.service.analytics', 'ionic-toast', 'ionicShop', 'angular-svg-round-progress'])
+    'ngCordova', 'ionic.service.core', 'ionic.service.push', 'ionic.service.analytics', 'ionic-toast', 'ionicShop', 'angular-svg-round-progress', 'ui.gravatar'])
     .config(configBlock)
   //  .run(runBlock);
 
@@ -420,5 +420,25 @@
     console.log("Device token:", token.token);
   });
 });
+
+// gravatar manenoz
+//
+'gravatarServiceProvider', function(gravatarServiceProvider) {
+    gravatarServiceProvider.defaults = {
+      size     : 100,
+      "default": 'mm'  // Mystery man as default for missing avatars
+    };
+
+    // Use https endpoint
+    gravatarServiceProvider.secure = true;
+
+    // Force protocol
+    gravatarServiceProvider.protocol = 'my-protocol';
+
+    // Override URL generating function
+    gravatarServiceProvider.urlFunc = function(options) {
+      // Code to generate custom URL
+    };
+  }
   }
 })();

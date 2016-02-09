@@ -18,6 +18,7 @@
     "moment": "~2.11.1",
     "ionic-toast": "~0.2.0",
     "ionic-shop": "*",
-    "ionic-content-banner": "~1.0.1"
+    "ionic-content-banner": "~1.0.1",
+    "angular-gravatar": "~0.4.1"
   }
 }
