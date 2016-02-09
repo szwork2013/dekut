@@ -19,7 +19,8 @@
         <ion-list>
         <div class="list">
         <a class="item item-avatar" nav-clear menu-close ui-sref="app.profile" ng-show="currentUser">
-              <img ng-src="{{currentUser.avatar}}">
+        <!--      <img ng-src="{{currentUser.avatar}}"> -->
+              <img class="avatar" gravatar-src="'{{currentUser.email}'" gravatar-size="100">
               <h2>Hi @<b>{{currentUser.username}}</b></h2>
               <p>Welcome Back</p>
           </a>

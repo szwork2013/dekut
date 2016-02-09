@@ -93,11 +93,7 @@
       template: '<ion-spinner style="text-align: center; margin-top: 50%;"></ion-spinner>',
       controller: 'LoadingCtrl'
     })
-/**    .state('login', {
-      url: '/login',
-      templateUrl: 'app/authentication/login.html',
-      controller: 'LoginCtrl'
-    }) **/
+
     // auth logics
     .state('signin', {
       url: '/signin',
