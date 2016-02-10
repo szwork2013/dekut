@@ -13,7 +13,8 @@ function ElibraryCtrl($scope, User, Elibrary){
       .create({
         unitcode : $scope.elibrary.unitcode,
         unittitle: $scope.elibrary.unittitle,
-        email : $scope.elibrary.email
+        email : $scope.elibrary.email,
+        date : new Date().toJSON()
 
       })
       .$promise

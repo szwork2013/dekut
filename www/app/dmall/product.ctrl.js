@@ -65,6 +65,8 @@ $ionicModal.fromTemplateUrl('app/dmall/makeorder.html', {
         $scope.newOrder.customerName = $scope.currentUser.names;
         $scope.newOrder.customerPhone = $scope.currentUser.phonenumber;
         $scope.newOrder.customerEmail = $scope.currentUser.email;
+        $scope.newOrder.date = new Date().toJSON();
+
 
         Order.create($scope.newOrder,
             function (res) {

@@ -1,20 +1,23 @@
-<div class="ionic modal slide-in-up" ng-controller="HomeTabCtrl">
-   <header class="bar bar-header bar-positive flat">
-      <h1 class="title fab-left">New Twitt</h1>
-      <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
-   </header>
-   <ion-content class="padding has-header">
-                <form novalidate="novalidate" name="tweetForm">
+     <ion-modal-view class="ionic">
+         <header class="bar bar-header bar-positive flat">
+<h1 class="title fab-left">New Twitt</h1>
+<button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+</header>
+<ion-content class="has-header">
+         <form novalidate="double-padding novalidate" name="tweetForm">
+<div class="content item-body">
          <label class="item item-input item-floating-label">
-                    <span class="input-label">What's Happening</span>
-                <input type="text" placeholder="Type your tweet" ng-model="newTweet.content" required/>
-                </label>
-
-  <button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-checkmark"
-                        data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveTweet()">
-Send
-                    </button>
-       </form>
-
-   </ion-content>
+             <span class="input-label">Whats Happening</span>
+         <textarea type="text" placeholder="Type Whats Happening..." ng-model="newTweet.content" required>
+         </textarea>
+         </label>
 </div>
+
+<button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
+                 data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="PostTweet()">
+Send
+             </button>
+</form>
+
+</ion-content>
+     </ion-modal-view>

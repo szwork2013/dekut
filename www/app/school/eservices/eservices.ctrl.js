@@ -16,7 +16,8 @@ function EservicesCtrl($scope, User, Eservice){
         type : $scope.eservice.type,
         content: $scope.eservice.content,
         phonenumber : $scope.eservice.phonenumber,
-        email : $scope.eservice.email
+        email : $scope.eservice.email,
+        date : new Date().toJSON()
 
       })
       .$promise
