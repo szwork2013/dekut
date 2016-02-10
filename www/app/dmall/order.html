@@ -1,0 +1,30 @@
+<ion-view title="Make Your Order">
+
+   <ion-nav-buttons side="left">
+     <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+     </button>
+   </ion-nav-buttons>
+
+ <ion-content class="has-header">
+   <div class="card item item-body">
+
+   </div>
+   <p/>
+   <div class="padding">
+<form novalidate="double-padding novalidate" name="orderForm" id="idForm">
+  <label class="item item-input item-floating-label">
+      <span class="input-label">Location For Delivery</span>
+  <input type="text" placeholder="Location For Delivery" ng-model="newOrder.location" required/>
+  </label>
+  <label class="item item-input item-floating-label">
+      <span class="input-label">Other Details</span>
+  <input type="text" placeholder="Further Details To Supplier (e.g Color, size)" ng-model="newOrder.details">
+  </label>
+  <button ng-disabled="!orderForm.$valid" class="button button-full button-positive icon-left ion-bag"
+                  data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="MakeOrder()">
+  Order
+              </button>
+</form>
+   </div>
+ </ion-content>
+ </ion-view>

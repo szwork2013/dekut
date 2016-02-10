@@ -23,8 +23,11 @@ Product
 
     });
 //display modal for checkout
-
-$ionicModal.fromTemplateUrl('makeorder.html', {
+// goto order url
+$scope.goToOrder = function () {
+    $location.path('app.order({id: order.id})');
+};
+$ionicModal.fromTemplateUrl('app/dmall/makeorder.html', {
         scope: $scope,
         animation: 'slide-in-up'
     }).then(function (modal) {

@@ -218,6 +218,16 @@
           }
         }
       })
+      // url for placing order, place order in each id
+      .state('app.order', {
+          url: '/product/:id/order',
+          views: {
+            'menuContent': {
+              templateUrl: 'app/dmall/order.html',
+              controller: 'ProductCtrl'
+            }
+          }
+        })
       .state('app.catalog', {
         url: '/catalog',
         views: {
@@ -422,7 +432,7 @@
 'gravatarServiceProvider', function(gravatarServiceProvider) {
     gravatarServiceProvider.defaults = {
       size     : 100,
-      "default": 'mm'  // Mystery man as default for missing avatars
+      "default": '/img/student.png'  // Mystery man as default for missing avatars, so let's give him one
     };
 
     // Use https endpoint
