@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('TwittCtrl', TwittCtrl, ['lbServices', 'ionic', 'TwittsCtrl']);
 
-  function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location, Restangular){
+  function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location, Comment, ionicToast){
 
 Tweet
     .find({filter: {where: {id: $stateParams.id}}})
@@ -24,6 +24,11 @@ Tweet
     $scope.currentUser = User.getCurrent();
         $scope.tweet = {};
         $scope.comments = {};
+
+        //toast maneno's
+        $scope.hideToast = function(){
+          ionicToast.hide();
+        };
 
      //Modal objects
      $ionicModal.fromTemplateUrl('app/twitts/newcomment.html', {
@@ -59,6 +64,11 @@ Tweet
      * @name getComments()
      * Load all comments from the tweet
      */
+    // get comments
+
+      $scope.comments = Comment.find({
+
+      });
     $scope.getComments = function() {
         $scope.comments = [];
         Tweet
@@ -94,7 +104,7 @@ Tweet
                 })
     };
   //  $scope.getComments();
-    $scope.saveComment = function() {
+  /**  $scope.saveComment = function() {
                 $scope.close();
 
         $scope.newComment.date = new Date().toJSON();
@@ -110,6 +120,25 @@ Tweet
                 $scope.getComments();
             },
             function(err) {})
+    }; **/
+    // better approach to saving comments
+    $scope.saveComment = function () {
+        $scope.close();
+        $scope.newComment.date = new Date().toJSON();
+        $scope.newComment.ownerId = $scope.currentUser.id;
+        $scope.newComment.ownerUsername = $scope.currentUser.username;
+        $scope.newComment.tweetId = $scope.tweet.id;
+        Comment.create($scope.newComment,
+            function (res) {
+                delete $scope.newComment;
+        //        $scope.refresh();
+        //        //show toast
+               ionicToast.show('Your New Comment Has Been Posted.', 'bottom', true, 2500);
+               $scope.hideToast();
+            },
+            function (err) {
+                console.log(err)
+            })
     };
 
 
