@@ -25,7 +25,8 @@
     "cordova-sqlite-storage",
     "cordova-plugin-inappbrowser",
     "phonegap-plugin-push",
-    "cordova-plugin-file-transfer"
+    "cordova-plugin-file-transfer",
+    "org.apache.cordova.statusbar"
   ],
   "cordovaPlatforms": [
     "android"

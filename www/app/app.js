@@ -432,7 +432,7 @@
 'gravatarServiceProvider', function(gravatarServiceProvider) {
     gravatarServiceProvider.defaults = {
       size     : 100,
-      "default": '/img/student.png'  // Mystery man as default for missing avatars, so let's give him one
+      "default": 'img/student.png'  // Mystery man as default for missing avatars, so let's give him one
     };
 
     // Use https endpoint

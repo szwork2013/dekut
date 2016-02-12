@@ -34,7 +34,7 @@ $scope.hideToast = function(){
 };
 
 // modal for new tweet
-$ionicModal.fromTemplateUrl('/app/twitts/newtweet.html', {
+$ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
         scope: $scope,
         animation: 'slide-in-up'
     }).then(function (modal) {
