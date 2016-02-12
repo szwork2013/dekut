@@ -1,7 +1,15 @@
 <ion-view title="Personal TimeTable">
   <ion-content class="has-header">
     <ion-list>
+          <!-- <div ng-hide="personaltt.ownerId == currentUser.id > 0" class="card empty-msg">
+            <ion-item class="item item-body">
+              You Don't Have any Personal TimeTable Yet, <a ng-click="NewPTTModal()">Set One</a>.
+            </ion-item>
+              </div> -->
+
     <div class="list card" ng-repeat="personaltt in personaltts.slice().reverse()">
+
+      <div  ng-if="personaltt.ownerId === currentUser.id" class="list">
 <ion-item class="item item-body">
   <b/> UNIT : </b>
 {{personaltt.unit}}
@@ -20,6 +28,8 @@
 </div>
 
 </ion-item>
+</div>
+
 </div>
 </ion-list>
   </ion-content>
