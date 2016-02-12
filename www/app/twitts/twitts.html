@@ -46,15 +46,18 @@
         </div>
 
         <div class="item tabs tabs-secondary tabs-icon-left">
-          <a ng-class="tweet.userLikedTweet ? 'button button-small button-royal' : 'button button-small button-outline button-balanced'" ng-click="like()">
-          <!--    {{tweet.likes}} --> Favorite
-              <i class="ion-ios7-star"></i></a>
+        <!--  <a ng-class="tweet.userLikedTweet ? 'button button-small button-royal' : 'button button-small button-outline button-balanced'" ng-click="like()">
+          <!--    {{tweet.likes}} --><!-- Favorite   <i class="ion-ios7-star"></i></a> -->
+          <a class="tab-item" ui-sref="app.twitt({id: tweet.id})">
+            <i class="icon ion-chatbubbles"></i>
+           Comment
+          </a>
 
           <a class="tab-item" ui-sref="app.twitt({id: tweet.id})">
             <i class="icon ion-more"></i>
           Read More
           </a>
-          <a class="button-icon icon ion-android-more-vertical"></a>
+        <!--  <a class="button-icon icon ion-android-more-vertical"></a> -->
 
         </div>
       </div>

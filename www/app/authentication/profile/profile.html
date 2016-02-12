@@ -13,10 +13,10 @@
     <ion-content class="content has-header">
 
 
-          <div class="hero has-mask " style="background-image: url('http://ionicframework.com/img/docs/winston.jpg');">
-              <div class="content">
+          <div class="hero has-mask " style="background-image: url('img/nairobae.jpg');">
+              <div class="content" ng-controller="ProfileCtrl">
             <!--      <div class="avatar" style="background-image: url('http://ionicframework.com/img/docs/barrett.jpg');"></div> -->
-                  <img class="avatar" gravatar-src="'denzjoseph@gmail.com'" gravatar-size="100">
+                  <img class="avatar" gravatar-src="currentUser.email" gravatar-size="100">
                   <h3><a class="light">{{currentUser.names}}</a></h3>
                   <h4>{{currentUser.email}}</h4>
                 <!--  <p>User ID: {{currentUser.id}} </p> -->
