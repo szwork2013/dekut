@@ -1,5 +1,5 @@
 angular.module('app.signin', ['lbServices', 'ionic'])
-    .controller('SigninCtrl', function ($scope, User, $location, $ionicPopup, $ionicLoading) {
+    .controller('SigninCtrl', function ($scope, User, $location, $ionicPopup, $ionicLoading, ionicToast) {
         if (User.getCachedCurrent()!==null) {
            $location.path('app/twitts');
         }
@@ -9,6 +9,10 @@ angular.module('app.signin', ['lbServices', 'ionic'])
          * ionic creating a child scope for the ion-content directive
          */
         $scope.credentials = {};
+       // hide toast function
+    /**    $scope.hideToast = function(){
+          ionicToast.hide();
+        };  **/
 
        // Add Loading while it sends data and waits
        /*
@@ -57,6 +61,9 @@ angular.module('app.signin', ['lbServices', 'ionic'])
                     $location.nextAfterLogin = null;
                     $location.path(next);
                     $scope.hide();
+                    // show toast
+                    ionicToast.show('Welcome Back!', 'bottom', true, 2500);
+                  //  $scope.hideToast();
                 },
                 function (err) {
                     $scope.hide();

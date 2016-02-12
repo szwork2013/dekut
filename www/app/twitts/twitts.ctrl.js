@@ -29,9 +29,9 @@
   };
 
 //toast maneno's
-$scope.hideToast = function(){
+/** $scope.hideToast = function(){
   ionicToast.hide();
-};
+}; **/
 
 // modal for new tweet
 $ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
@@ -67,8 +67,8 @@ $ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
                 delete $scope.newTweet;
         //        $scope.refresh();
         //        //show toast
-               ionicToast.show('Your New Tweet Has Been Posted.', 'bottom', true, 2500);
-               $scope.hideToast();
+               ionicToast.show('Your New Twitt Has Been Posted.', 'bottom', true, 2500);
+          //     $scope.hideToast();
             },
             function (err) {
                 console.log(err)

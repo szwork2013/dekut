@@ -26,9 +26,9 @@ Tweet
         $scope.comments = {};
 
         //toast maneno's
-        $scope.hideToast = function(){
+    /**    $scope.hideToast = function(){
           ionicToast.hide();
-        };
+        }; **/
 
      //Modal objects
      $ionicModal.fromTemplateUrl('app/twitts/newcomment.html', {
@@ -141,7 +141,7 @@ Tweet
         //        $scope.refresh();
         //        //show toast
                ionicToast.show('Your New Comment Has Been Posted.', 'bottom', true, 2500);
-               $scope.hideToast();
+            //   $scope.hideToast();
             },
             function (err) {
                 console.log(err)

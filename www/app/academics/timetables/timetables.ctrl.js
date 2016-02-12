@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('TimetablesCtrl', TimetablesCtrl);
 
-  function TimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout){
+  function TimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout, ionicToast){
     $scope.currentUser = User.getCurrent();
     $scope.personaltt = {};
     // modal for new tweet
@@ -31,13 +31,15 @@
 
 
       $scope.PostPTT = function() {
+        $scope.close();
+        ionicToast.show('TimeTabele Saved!.', 'top', true, 2500);
+
         Personaltt
           .create({
             unit : $scope.personaltt.unit,
             timestart: $scope.personaltt.timestart,
             timestop : $scope.personaltt.timestop,
             ownerId : $scope.currentUser.id
-
           })
           .$promise
           .then(function(err) {
