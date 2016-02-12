@@ -24,7 +24,8 @@
     "cordova-plugin-x-toast",
     "cordova-sqlite-storage",
     "cordova-plugin-inappbrowser",
-    "phonegap-plugin-push"
+    "phonegap-plugin-push",
+    "cordova-plugin-file-transfer"
   ],
   "cordovaPlatforms": [
     "android"

@@ -5,18 +5,29 @@
   <ion-content>
     <div class="list card">
       <div class="item item-avatar">
+        <div class="avatar">
         <img ng-src="{{twitt.avatar}}">
+</div>
         <h2>{{tweet.ownerUsername}}</h2>
         <p>{{tweet.content}}</p>
       </div>
     </div>
     <h4 style="margin-left: 10px">Comments</h4>
     <div class="list card">
-        <div ng-repeat="comment in comments" class="item item-avatar" style="padding-top: 10px; padding-bottom:10px;">
+  <!--    <div ng-if="comment.tweetId == tweet.id" class="card empty-msg">
+        <ion-item class="item item-body">
+          No Comments yet At The Moment.
+          <br/>
+          Be The First One To <a ng-click="openModal()"> Comment.</a>
+        </ion-item>
+      </div> -->
+          <ion-list>
+        <div ng-repeat="comment in comments.slice().reverse()" ng-if="comment.tweetId === tweet.id" class="item item-avatar" style="padding-top: 10px; padding-bottom:10px;">
             <img ng-src="{{comment.avatar}}">
-            <h2>{{comment.username}}<p class="date">{{comment.date | timeDistance}}</p></h2>
+            <h2>{{comment.username}}<p class="date"><i class="icon ion-ios-clock"></i>{{comment.date | timeDistance}} Ago</p></h2>
             <p>{{comment.content}}</p>
         </div>
+      </ion-list>
 
     </div>
   </ion-content>

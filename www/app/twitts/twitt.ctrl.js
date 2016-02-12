@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('TwittCtrl', TwittCtrl, ['lbServices', 'ionic', 'TwittsCtrl']);
 
-  function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location, Comment, ionicToast){
+  function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location, Comment, ionicToast, $rootScope){
 
 Tweet
     .find({filter: {where: {id: $stateParams.id}}})
@@ -67,7 +67,14 @@ Tweet
     // get comments
 
       $scope.comments = Comment.find({
-
+  /**      filter: {
+          where: {
+            tweetId: $scope.tweet.id
+          },
+          include: [
+            'comments'
+          ]
+        } **/
       });
     $scope.getComments = function() {
         $scope.comments = [];
