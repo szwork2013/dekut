@@ -8,7 +8,7 @@
     // <!-- ionicToast.show(message, position, stick, time); -->
       ionicToast.show('Your New Comment Has Been Posted.', 'bottom', false, 2500);
     };
-    // refresh to get tweet
+    // refresh to get comments
     $scope.refresh = function () {
             $scope.comments = Comment.find({
 

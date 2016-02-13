@@ -22,6 +22,14 @@ var filterBarInstance = {};
 $scope.products = Product.find({
 
 })
+// refresh to get tweet
+$scope.refresh = function () {
+  $scope.products = Product.find({
+
+  })
+  //Stop the ion-refresher from spinning
+    $scope.$broadcast('scroll.refreshComplete');
+}
 
 }
 })();

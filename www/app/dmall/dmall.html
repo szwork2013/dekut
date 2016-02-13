@@ -6,6 +6,10 @@
    </ion-nav-buttons>
 
  <ion-content class="has-header">
+   <ion-refresher
+           pulling-text="Pull to refresh..."
+           on-refresh="refresh()">
+   </ion-refresher>
    <div ng-if="products.length === 0" class="card empty-msg">
 <ion-item class="item item-body">
   No Products At The Moment. Move On! <i class="ion-sad"></i>

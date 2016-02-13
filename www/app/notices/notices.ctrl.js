@@ -13,7 +13,13 @@
   $scope.notices = Notice.find({
 
   });
+  $scope.refresh = function () {
+    $scope.notices = Notice.find({
 
+    });
+    //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+  };
     //filter bar shit here
     $scope.showFilterBar = function () {
     filterBarInstance = $ionicFilterBar.show({

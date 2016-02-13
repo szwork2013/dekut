@@ -37,6 +37,7 @@
       $scope.PostPTT = function() {
         $scope.close();
         $scope.showToast();
+        $scope.refresh();
         Personaltt
           .create({
             unit : $scope.personaltt.unit,
@@ -54,6 +55,13 @@
       $scope.personaltts = Personaltt.find({
 
       });
+      $scope.refresh = function () {
+        $scope.personaltts = Personaltt.find({
+
+        });
+        //Stop the ion-refresher from spinning
+          $scope.$broadcast('scroll.refreshComplete');
+      };
 
 
   }

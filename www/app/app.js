@@ -7,9 +7,7 @@
   //  .run(runBlock);
 
     .run(function($ionicPlatform, $ionicAnalytics, $window, $ionicPopup) {
-    //  APP_ID=PARSE_APP_ID --variable CLIENT_KEY=PARSE_CLIENT_KEY
-  //    Parse.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "jvC7wu0VfMnpclrNvLKsGmAXz5ZoVcMdGFYrbGUI");
-  // Parse.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "MhpRKajED4WX773jjJcdqGKDLzeemhEF9rTqpZsl");
+
       $ionicPlatform.ready(function() {
         //ionic.Platform.fullScreen();
         $ionicAnalytics.register();
@@ -26,64 +24,7 @@
             User.getCurrent();
         }
       });
-//     window.parsePlugin.initialize("nyPEebOF09JdRtPlcjcBMmoorDU1JnadLE0mDg4w", "1VBlrXLz6De2faWBsEDSMx2b81KBD9Y95Sxg72WV", function() {
-/**
-     window.parsePlugin.initialize("U09YpxQvTxujzOmwdLP0U21qpMmIAxG7RlHAhVgU", "jvC7wu0VfMnpclrNvLKsGmAXz5ZoVcMdGFYrbGUI", function() {
-          console.log('Parse initialized successfully.');
-          window.parsePlugin.subscribe('SampleChannel', function() {
-            console.log('Successfully subscribed to SampleChannel.');
-              window.parsePlugin.getInstallationId(function(id) {
-                // update the view to show that we have the install ID
-                console.log('Retrieved install id: ' + id);
-                  // *
-                  //  * Now you can construct an object and save it to your own services, or Parse, and corrilate users to parse installations
-                  //  *
-                  //  var install_data = {
-                  //     installation_id: id,
-                  //     channels: ['SampleChannel']
-                  //  }
-                  //  *
-              }, function(e) {
-                console.log('Failure to retrieve install id.');
-              });
-          }, function(e) {
-              console.log('Failed trying to subscribe to SampleChannel.');
-          });
-        }, function(e) {
-            console.log('Failure to initialize Parse.');
-        });
-      });
-      $rootScope.show = function(text) {
-        $rootScope.loading = $ionicLoading.show({
-          template: text ? text : 'Loading...',
-          animation: 'fade-in',
-          showBackdrop: true,
-          maxWidth: 500,
-          showDelay: 0
-        });
-      };
-      $rootScope.hide = function() {
-        $ionicLoading.hide();
-      };
-      $rootScope.longnotify = function(text) {
-        $rootScope.show(text);
-        $window.setTimeout(function() {
-          $rootScope.hide();
-        }, 2999);
-      };
-      $rootScope.quicknotify = function(text) {
-        $rootScope.show(text);
-        $window.setTimeout(function() {
-          $rootScope.hide();
-        }, 999);
-      };
-      $rootScope.confirm = function(title,text) {
-        var confirmPopup = $ionicPopup.confirm({
-           title: title,
-           template: text
-        });
-        return confirmPopup;
-      }; **/
+
     })
 
   function configBlock($stateProvider, $urlRouterProvider, $provide, $ionicFilterBarConfigProvider, $httpProvider, $ionicAppProvider){
@@ -436,7 +377,7 @@
     };
 
     // Use https endpoint
-    gravatarServiceProvider.secure = true;
+    gravatarServiceProvider.secure = false;
 
     // Force protocol
     gravatarServiceProvider.protocol = 'my-protocol';
