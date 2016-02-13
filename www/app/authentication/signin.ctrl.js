@@ -3,6 +3,10 @@ angular.module('app.signin', ['lbServices', 'ionic'])
         if (User.getCachedCurrent()!==null) {
            $location.path('app/twitts');
         }
+        $scope.showToast = function(){
+        // <!-- ionicToast.show(message, position, stick, time); -->
+          ionicToast.show('Welcome Back! :)', 'bottom', false, 2800);
+        };
         /**
          * Currently you need to initialiate the variables
          * you use whith ng-model. This seems to be a bug with
@@ -62,7 +66,7 @@ angular.module('app.signin', ['lbServices', 'ionic'])
                     $location.path(next);
                     $scope.hide();
                     // show toast
-                    ionicToast.show('Welcome Back!', 'bottom', true, 2500);
+                    $scope.showToast();
                   //  $scope.hideToast();
                 },
                 function (err) {

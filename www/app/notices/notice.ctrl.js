@@ -23,7 +23,7 @@ Notice
 // social sharing
 $scope.shareNative = function() {
         if (window.plugins && window.plugins.socialsharing) {
-            window.plugins.socialsharing.share("Checkout Notice in DekutApp: " + $scope.notice.title + ",By" + $scope.notice.author + ".",
+            window.plugins.socialsharing.share("Checkout Notice in DekutApp: " + $scope.notice.title + ",By " + $scope.notice.author + ".",
                 '', null, "http://twitter.com/DekutApp",
                 function() {
                     console.log("Success")

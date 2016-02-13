@@ -7,6 +7,14 @@
     $scope.currentUser = User.getCurrent();
     $scope.personaltt = {};
     // modal for new tweet
+      $scope.refresh = function () {
+          $scope.personaltts = Personaltt.find({
+
+          });
+          //Stop the ion-refresher from spinning
+            $scope.$broadcast('scroll.refreshComplete');
+        };
+
     $ionicModal.fromTemplateUrl('newptt.html', {
             scope: $scope,
             animation: 'slide-in-up'
@@ -55,13 +63,6 @@
       $scope.personaltts = Personaltt.find({
 
       });
-      $scope.refresh = function () {
-        $scope.personaltts = Personaltt.find({
-
-        });
-        //Stop the ion-refresher from spinning
-          $scope.$broadcast('scroll.refreshComplete');
-      };
 
 
   }

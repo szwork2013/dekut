@@ -380,7 +380,7 @@
     gravatarServiceProvider.secure = false;
 
     // Force protocol
-    gravatarServiceProvider.protocol = 'my-protocol';
+    gravatarServiceProvider.protocol = 'http';
 
     // Override URL generating function
     gravatarServiceProvider.urlFunc = function(options) {
