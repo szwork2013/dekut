@@ -8,6 +8,14 @@
     // <!-- ionicToast.show(message, position, stick, time); -->
       ionicToast.show('Your New Comment Has Been Posted.', 'bottom', false, 2500);
     };
+    // refresh to get tweet
+    $scope.refresh = function () {
+            $scope.comments = Comment.find({
+
+            });
+      //Stop the ion-refresher from spinning
+        $scope.$broadcast('scroll.refreshComplete');
+    };
 
 Tweet
     .find({filter: {where: {id: $stateParams.id}}})
@@ -142,7 +150,7 @@ Tweet
         Comment.create($scope.newComment,
             function (res) {
                 delete $scope.newComment;
-        //        $scope.refresh();
+              $scope.refresh();
         //        //show toast
                 $scope.showToast();
             //   $scope.hideToast();

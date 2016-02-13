@@ -9,17 +9,18 @@
     $scope.currentUser = User.getCurrent();
 
   $scope.newTweet = {};
-
   $scope.tweets = Tweet.find({
 
   });
 
+
 // refresh to get tweet
 $scope.refresh = function () {
-    delete $scope.tweets;
-    $scope.tweets = [];
-    $scope.lastTweetId = 999999999;
-    $scope.loadMore();
+  $scope.tweets = Tweet.find({
+
+  });
+  //Stop the ion-refresher from spinning
+    $scope.$broadcast('scroll.refreshComplete');
 };
 
     //filter bar shit here
@@ -76,7 +77,7 @@ $ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
         Tweet.create($scope.newTweet,
             function (res) {
                 delete $scope.newTweet;
-        //        $scope.refresh();
+              $scope.refresh();
         //        //show toast
                   $scope.showToast();
         //   $scope.hideToast();
