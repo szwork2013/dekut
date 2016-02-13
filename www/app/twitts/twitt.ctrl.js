@@ -4,6 +4,10 @@
     .controller('TwittCtrl', TwittCtrl, ['lbServices', 'ionic', 'TwittsCtrl']);
 
   function TwittCtrl($scope, $stateParams, Storage, $ionicModal, User, Tweet, Avatar, $location, Comment, ionicToast, $rootScope){
+    $scope.showToast = function(){
+    // <!-- ionicToast.show(message, position, stick, time); -->
+      ionicToast.show('Your New Comment Has Been Posted.', 'bottom', false, 2500);
+    };
 
 Tweet
     .find({filter: {where: {id: $stateParams.id}}})
@@ -140,7 +144,7 @@ Tweet
                 delete $scope.newComment;
         //        $scope.refresh();
         //        //show toast
-               ionicToast.show('Your New Comment Has Been Posted.', 'bottom', true, 2500);
+                $scope.showToast();
             //   $scope.hideToast();
             },
             function (err) {

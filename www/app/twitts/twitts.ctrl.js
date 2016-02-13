@@ -14,6 +14,13 @@
 
   });
 
+// refresh to get tweet
+$scope.refresh = function () {
+    delete $scope.tweets;
+    $scope.tweets = [];
+    $scope.lastTweetId = 999999999;
+    $scope.loadMore();
+};
 
     //filter bar shit here
     $scope.showFilterBar = function () {
@@ -29,9 +36,13 @@
   };
 
 //toast maneno's
-/** $scope.hideToast = function(){
+ $scope.hideToast = function(){
   ionicToast.hide();
-}; **/
+};
+$scope.showToast = function(){
+// <!-- ionicToast.show(message, position, stick, time); -->
+  ionicToast.show('Your New Twitt Has Been Posted.', 'bottom', false, 2500);
+};
 
 // modal for new tweet
 $ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
@@ -67,8 +78,8 @@ $ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
                 delete $scope.newTweet;
         //        $scope.refresh();
         //        //show toast
-               ionicToast.show('Your New Twitt Has Been Posted.', 'bottom', true, 2500);
-          //     $scope.hideToast();
+                  $scope.showToast();
+        //   $scope.hideToast();
             },
             function (err) {
                 console.log(err)

@@ -5,6 +5,10 @@ angular.module('app.register', ['lbServices', 'ionic'])
          * Show loading while data is being processed
          * Then hide loading when feedback is gotten
          */
+         $scope.showToast = function(){
+         // <!-- ionicToast.show(message, position, stick, time); -->
+           ionicToast.show('ThankYou For Registering, Welcome :)', 'bottom', false, 2800);
+         };
 
         $scope.show = function(message) {
             $ionicLoading.show({
@@ -69,8 +73,7 @@ angular.module('app.register', ['lbServices', 'ionic'])
                                 .then(function (res) {
                                     $location.path('app/twitts')
                                                             $scope.hide();
-                                                            ionicToast.show('ThankYou For Registering, Welcome :)', 'bottom', true, 2500);
-
+                                                            $scope.showToast();
 
                                 }, function (err) {
                                                         $scope.hide();

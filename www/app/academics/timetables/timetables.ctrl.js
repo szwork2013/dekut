@@ -13,6 +13,10 @@
         }).then(function (modal) {
             $scope.modal = modal;
         });
+        $scope.showToast = function(){
+        // <!-- ionicToast.show(message, position, stick, time); -->
+          ionicToast.show('Personal TimeTable Saved..', 'bottom', false, 2500);
+        };
 
         $scope.NewPTTModal = function () {
             $scope.modal.show();
@@ -32,8 +36,7 @@
 
       $scope.PostPTT = function() {
         $scope.close();
-        ionicToast.show('TimeTabele Saved!.', 'top', true, 2500);
-
+        $scope.showToast();
         Personaltt
           .create({
             unit : $scope.personaltt.unit,
