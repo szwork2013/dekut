@@ -1,0 +1,52 @@
+<ion-view title="School TimeTables">
+  <ion-content class="has-header">
+    <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="refresh()">
+    </ion-refresher>
+    <ion-list>
+
+
+    <!-- <div class="list card" ng-repeat="schooltt in schooltts.slice().reverse()" ng-if="personaltt.ownerId === currentUser.id"> -->
+    <div class="list card" ng-repeat="schooltt in schooltts.slice().reverse()">
+
+<ion-item class="item item-body" ui-sref="app.schooltt({id: schooltt.id})">
+  <b/> UNIT : </b>
+{{schooltt.unit}}
+  <div class="list list-inset">
+    <div class="item">
+      <time>
+        <b/> FROM : </b> {{schooltt.timestart | amCalendar}}
+</time>
+    </div>
+    <div class="item">
+      <time>
+        <b/> TO : </b>
+      {{schooltt.timestop | amCalendar}}
+<time>
+    </div>
+</div>
+<div class="item tabs tabs-secondary tabs-icon-left">
+<!--  <a ng-class="tweet.userLikedTweet ? 'button button-small button-royal' : 'button button-small button-outline button-balanced'" ng-click="like()">
+  <!--    {{tweet.likes}} --><!-- Favorite   <i class="ion-ios7-star"></i></a> -->
+  <a class="tab-item" ui-sref="app.schooltt({id: schooltt.id})">
+    <i class="icon ion-location"></i>
+   {{schooltt.location}}
+  </a>
+
+  <a class="tab-item" ui-sref="app.schooltt({id: schooltt.id})">
+    <i class="icon ion-person"></i>
+  {{schooltt.lecturer}}
+  </a>
+<!--  <a class="button-icon icon ion-android-more-vertical"></a> -->
+
+</div>
+</ion-item>
+
+</div>
+</ion-list>
+  </ion-content>
+  <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="NewPTTModal()">
+  <i class="icon ion-edit light"></i>
+</button>
+</ion-view>

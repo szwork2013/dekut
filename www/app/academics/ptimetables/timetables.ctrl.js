@@ -1,12 +1,16 @@
   (function(){
   'use strict';
   angular.module('app')
-    .controller('TimetablesCtrl', TimetablesCtrl);
+    .controller('PTimetablesCtrl', PTimetablesCtrl);
 
-  function TimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout, ionicToast){
+  function STimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout, ionicToast){
     $scope.currentUser = User.getCurrent();
     $scope.personaltt = {};
-    // modal for new tweet
+
+    // GET the entered timetables
+    $scope.personaltts = Personaltt.find({
+
+    });
       $scope.refresh = function () {
           $scope.personaltts = Personaltt.find({
 
@@ -59,10 +63,7 @@
           });
       };
 
-      // GET the entered timetable
-      $scope.personaltts = Personaltt.find({
 
-      });
 
 
   }

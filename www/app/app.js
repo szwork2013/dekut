@@ -102,12 +102,21 @@
       }
     })
     // academics
-    .state('app.timetables', {
-      url: '/timetables',
+    .state('app.ptimetables', {
+      url: '/ptimetables',
       views: {
         'menuContent': {
-          templateUrl: 'app/academics/timetables/timetables.html',
-          controller: 'TimetablesCtrl'
+          templateUrl: 'app/academics/stimetables/timetables.html',
+          controller: 'PTimetablesCtrl'
+        }
+      }
+    })
+    .state('app.stimetables', {
+      url: '/stimetables',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/academics/ptimetables/timetables.html',
+          controller: 'STimetablesCtrl'
         }
       }
     })
