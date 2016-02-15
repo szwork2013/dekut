@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('PTimetablesCtrl', PTimetablesCtrl);
 
-  function STimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout, ionicToast){
+  function PTimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout, ionicToast){
     $scope.currentUser = User.getCurrent();
     $scope.personaltt = {};
 
@@ -19,7 +19,7 @@
             $scope.$broadcast('scroll.refreshComplete');
         };
 
-    $ionicModal.fromTemplateUrl('newptt.html', {
+    $ionicModal.fromTemplateUrl('app/academics/ptimetables/newppt.html', {
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function (modal) {

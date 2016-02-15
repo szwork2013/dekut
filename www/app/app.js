@@ -106,7 +106,7 @@
       url: '/ptimetables',
       views: {
         'menuContent': {
-          templateUrl: 'app/academics/stimetables/timetables.html',
+          templateUrl: 'app/academics/ptimetables/timetables.html',
           controller: 'PTimetablesCtrl'
         }
       }
@@ -115,8 +115,17 @@
       url: '/stimetables',
       views: {
         'menuContent': {
-          templateUrl: 'app/academics/ptimetables/timetables.html',
+          templateUrl: 'app/academics/stimetables/timetables.html',
           controller: 'STimetablesCtrl'
+        }
+      }
+    })
+    .state('app.stimetable', {
+      url: '/stimetable/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/academics/stimetables/timetable.html',
+          controller: 'STimetableCtrl'
         }
       }
     })
