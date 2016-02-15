@@ -9,11 +9,19 @@
     $scope.currentUser = User.getCurrent();
 
   $scope.newTweet = {};
-
   $scope.tweets = Tweet.find({
 
   });
 
+
+// refresh to get tweet
+$scope.refresh = function () {
+  $scope.tweets = Tweet.find({
+
+  });
+  //Stop the ion-refresher from spinning
+    $scope.$broadcast('scroll.refreshComplete');
+};
 
     //filter bar shit here
     $scope.showFilterBar = function () {
@@ -29,12 +37,16 @@
   };
 
 //toast maneno's
-$scope.hideToast = function(){
+ $scope.hideToast = function(){
   ionicToast.hide();
+};
+$scope.showToast = function(){
+// <!-- ionicToast.show(message, position, stick, time); -->
+  ionicToast.show('Your New Twitt Has Been Posted.', 'bottom', false, 2500);
 };
 
 // modal for new tweet
-$ionicModal.fromTemplateUrl('/app/twitts/newtweet.html', {
+$ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
         scope: $scope,
         animation: 'slide-in-up'
     }).then(function (modal) {
@@ -65,10 +77,10 @@ $ionicModal.fromTemplateUrl('/app/twitts/newtweet.html', {
         Tweet.create($scope.newTweet,
             function (res) {
                 delete $scope.newTweet;
-        //        $scope.refresh();
+              $scope.refresh();
         //        //show toast
-               ionicToast.show('Your New Tweet Has Been Posted.', 'bottom', true, 2500);
-               $scope.hideToast();
+                  $scope.showToast();
+        //   $scope.hideToast();
             },
             function (err) {
                 console.log(err)

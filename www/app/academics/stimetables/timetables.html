@@ -1,0 +1,56 @@
+<ion-view title="School TimeTables">
+  <ion-content class="has-header">
+    <ion-refresher
+            pulling-text="Pull to refresh..."
+            on-refresh="refresh()">
+    </ion-refresher>
+    <div ng-if="schooltts.length === 0" class="card empty-msg">
+      <ion-item class="item item-body">
+        No TimeTables From Your Department Yet, pass by later.
+        <br/>
+      </ion-item>
+        </div>
+    <ion-list>
+
+
+    <!-- <div class="list card" ng-repeat="schooltt in schooltts.slice().reverse()" ng-if="personaltt.ownerId === currentUser.id"> -->
+    <div class="list card" ng-repeat="schooltt in schooltts.slice().reverse()" ng-if="schooltt.year === currentUser.year">
+
+<ion-item class="item item-body" ui-sref="app.stimetable({id: schooltt.id})">
+  <b/> UNIT : </b>
+{{schooltt.unit}}
+  <div class="list list-inset">
+    <div class="item">
+      <time>
+        <b/> FROM : </b> {{schooltt.timestart | amCalendar}}
+</time>
+    </div>
+    <div class="item">
+      <time>
+        <b/> TO : </b>
+      {{schooltt.timestop | amCalendar}}
+<time>
+    </div>
+</div>
+<div class="item tabs tabs-secondary tabs-icon-left">
+
+  <div class="tab-item" ui-sref="app.stimetable({id: schooltt.id})">
+    <i class="icon ion-location"></i>
+   {{schooltt.location}}
+ </div>
+
+  <div class="tab-item" ui-sref="app.stimetable({id: schooltt.id})">
+    <i class="icon ion-person"></i>
+  {{schooltt.lecturer}}
+</div>
+
+</div>
+</ion-item>
+
+</div>
+</ion-list>
+  </ion-content>
+   <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ui-sref="app.ptimetables">
+  <i class="icon ion-person-stalker light"></i>
+</button>
+</ion-view>

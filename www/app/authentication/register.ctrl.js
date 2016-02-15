@@ -1,10 +1,14 @@
 angular.module('app.register', ['lbServices', 'ionic'])
-    .controller('RegisterCtrl', function ($scope, User, $ionicPopup, $location, $ionicLoading) {
+    .controller('RegisterCtrl', function ($scope, User, $ionicPopup, $location, $ionicLoading, ionicToast) {
 
      /*
          * Show loading while data is being processed
          * Then hide loading when feedback is gotten
          */
+         $scope.showToast = function(){
+         // <!-- ionicToast.show(message, position, stick, time); -->
+           ionicToast.show('ThankYou For Registering, Welcome :)', 'bottom', false, 2800);
+         };
 
         $scope.show = function(message) {
             $ionicLoading.show({
@@ -69,6 +73,7 @@ angular.module('app.register', ['lbServices', 'ionic'])
                                 .then(function (res) {
                                     $location.path('app/twitts')
                                                             $scope.hide();
+                                                            $scope.showToast();
 
                                 }, function (err) {
                                                         $scope.hide();

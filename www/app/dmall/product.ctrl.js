@@ -3,7 +3,23 @@
   angular.module('app')
     .controller('ProductCtrl', ProductCtrl, ['lbServices', 'ionic', 'ProductCtrl']);
 
-  function ProductCtrl($scope, $stateParams, $ionicModal, User, Product, $location, Category, Order){
+  function ProductCtrl($scope, $stateParams, $ionicModal, User, Product, $location, Category, Order, ionicToast, $ionicPopup){
+
+    $scope.showToast = function(){
+    // <!-- ionicToast.show(message, position, stick, time); -->
+      ionicToast.show('Order Has Been received, Supplier Will get Intouch with you.', 'bottom', false, 3800);
+    };
+
+  // show popup
+  $scope.showPopup = function (title, errorMsg) {
+      var alertPopup = $ionicPopup.alert({
+          title: 'Order Received, Supplier Will Get In Touch!',
+          template: errorMsg
+      });
+      alertPopup.then(function () {
+          console.log($scope.MakeOrder);
+      });
+  };
 
 Product
     .find({
@@ -57,8 +73,10 @@ $ionicModal.fromTemplateUrl('app/dmall/makeorder.html', {
 
     $scope.MakeOrder = function () {
         $scope.close();
+        $scope.showToast();
+        $scope.showPopup();
         $scope.newOrder.date = new Date().toJSON();
-       $scope.newOrder.productName = $scope.product.name;
+        $scope.newOrder.productName = $scope.product.name;
         $scope.newOrder.productQuantity = $scope.productQuantity;
         $scope.newOrder.productTotalAmount = $scope.productTotalAmount;
         $scope.newOrder.customerId = $scope.currentUser.id;

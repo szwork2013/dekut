@@ -6,6 +6,10 @@
    </ion-nav-buttons>
 
  <ion-content class="has-header">
+   <ion-refresher
+           pulling-text="Pull to refresh..."
+           on-refresh="refresh()">
+   </ion-refresher>
    <div ng-if="notices.length === 0" class="card empty-msg">
 <ion-item class="item item-body">
   No Notices At The Moment. Move On!
@@ -17,28 +21,31 @@
 
        <div class="item"  ui-sref="app.notice({id: notice.id})">
       <!--   <img ng-src="{{notice.avatar}}"> -->
-         <h2>{{notice.name}}</h2>
+         <h2>{{notice.title}}</h2>
 
        </div>
 
        <div class="item item-body" ui-sref="app.notice({id: notice.id})">
-       <img class="full-image" ng-src="{{notice.image}}">
+       <!-- <img class="full-image" ng-src="{{notice.image}}"> -->
+       <img class="full-image" src="img/rainynairobi.jpg">
+
+
          <p>
-         {{notice.description}}
+         {{notice.content}}
          </p>
          <p class="subdued"><i class="icon ion-ios-clock"></i> {{notice.startDate | amCalendar}}</p>
        </div>
 
        <div class="item tabs tabs-secondary tabs-icon-left">
-         <a class="tab-item">
+         <div class="tab-item" ng-click="shareNative()">
           Share
-             <i class="ion-share"></i></a>
+             <i class="icon ion-android-share-alt"></i>
+           </div>
 
          <a class="tab-item" ui-sref="app.notice({id: notice.id})">
            <i class="icon ion-more"></i>
          Read More
          </a>
-         <a class="button-icon icon ion-android-more-vertical"></a>
 
        </div>
      </div>

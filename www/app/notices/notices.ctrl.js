@@ -13,7 +13,13 @@
   $scope.notices = Notice.find({
 
   });
+  $scope.refresh = function () {
+    $scope.notices = Notice.find({
 
+    });
+    //Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+  };
     //filter bar shit here
     $scope.showFilterBar = function () {
     filterBarInstance = $ionicFilterBar.show({
@@ -65,5 +71,21 @@ $ionicModal.fromTemplateUrl('newnotice.html', {
                 console.log(err)
             })
     };
+
+    // social sharing
+    $scope.shareNative = function() {
+            if (window.plugins && window.plugins.socialsharing) {
+                window.plugins.socialsharing.share("Checkout This Notice in DekutApp: " + $scope.notice.title + "" + " " + $scope.notice.content + ".",
+                    '', null, "http://twitter.com/DekutApp",
+                    function() {
+                        console.log("Success")
+                    },
+                    function (error) {
+                        console.log("Share fail " + error)
+                    });
+            }
+            else console.log("Share plugin not available");
+    }
+
 }
 })();

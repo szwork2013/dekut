@@ -8,20 +8,37 @@
   <!--  <div class="list" ng-show="vm.item"> -->
    <!-- <img class="hero has-mask" ng-src={{vm.item.image}}> -->
    <div class="hero has-mask">
-   <img class="hero has-mask" ng-src={{notice.image}}>
+   <!-- <img class="hero has-mask" ng-src={{notice.image}}> -->
+   <img class="full-image" src="img/rainynairobi.jpg">
  </div>
       <div class="mid-bar dark-bg z1 padding">
-         <h3> {{notice.name}} </h3>
+         <h3> {{notice.title}} </h3>
+         <p>By {{notice.author}} </p>
+
+         <p class="subdued"> <i class=""></i>{{notice.type}} </p>
       </div>
     <!-- align  content to center and jump to next line -->
     <div class="item item-body">
-{{notice.description}}
+{{notice.content}}
     </div>
     </div>
-    <div class="double-padding">
+    <div class="card double-padding">
     <p class="subdued">From:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.startDate | amCalendar}}</strong></p>
     <p class="subdued">To:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.endDate | amCalendar}}</strong></p>
 
     </div>
+    <div class="padding">
+      <div class="card">
+        <div class="item item-body">
+
+   <p class="subdued">Location   <i class="icon ion-location"></i><strong>    {{notice.location}}</strong></p>
+
+<p>Contact:   <i class="icon ion-ios-telephone-outline"></i><strong>  {{notice.contact}} </strong></p>
+    </div>
+  </div>
+  </div>
   </ion-content>
+   <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="shareNative()">
+  <i class="icon ion-android-share-alt"></i>
+</button>
 </ion-view>
