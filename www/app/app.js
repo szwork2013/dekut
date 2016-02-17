@@ -6,7 +6,7 @@
     .config(configBlock)
   //  .run(runBlock);
 
-    .run(function($ionicPlatform, $ionicAnalytics, $window, $ionicPopup) {
+    .run(function($ionicPlatform, $ionicAnalytics, $window, $ionicPopup, ionicToast) {
 
       $ionicPlatform.ready(function() {
         //ionic.Platform.fullScreen();
@@ -66,10 +66,30 @@
    }
    // display bottom banner
    if(window.AdMob) AdMob.createBanner( {
-     adId:admobid.banner, 
+     adId:admobid.banner,
      position:AdMob.AD_POSITION.BOTTOM_CENTER,
      autoShow:true}
    );
+   $scope.showToast = function(){
+     ionicToast.show('This App Needs Internet Connection', 'bottom', false, 2500);
+   };
+   $scope.showToast2 = function(){
+     ionicToast.show('Enable it First', 'bottom', false, 2500);
+   };
+   // check internet connectivity
+   if(window.Connection) {
+                 if(navigator.connection.type == Connection.NONE) {
+                    //  $ionicPopup.confirm({
+                    //      title: "Internet Disconnected",
+                    //      content: "The internet is disconnected on your device."
+                    //  })
+                    //  show connection is not available toast
+$scope.showToast();
+
+                     .then(function(result) {
+                         if(!result) {
+                          //   ionic.Platform.exitApp();
+                         }
 
       });
 
