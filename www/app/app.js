@@ -64,6 +64,12 @@
            interstitial: 'ca-app-pub-8427277104243864/6066974633'
        };
    }
+   // display bottom banner
+   if(window.AdMob) AdMob.createBanner( {
+     adId:admobid.banner, 
+     position:AdMob.AD_POSITION.BOTTOM_CENTER,
+     autoShow:true}
+   );
 
       });
 
