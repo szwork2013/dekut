@@ -76,6 +76,7 @@
    $scope.showToast2 = function(){
      ionicToast.show('Enable it First', 'bottom', false, 2500);
    };
+
    // check internet connectivity
    if(window.Connection) {
                  if(navigator.connection.type == Connection.NONE) {
@@ -85,13 +86,17 @@
                     //  })
                     //  show connection is not available toast
 $scope.showToast();
+                      // 
+                      // .then(function(result) {
+                      //    if(!result) {
+                      //     //   ionic.Platform.exitApp();
+                      //  $scope.showToast2();
+                      //   }
+                      // });
 
-                     .then(function(result) {
-                         if(!result) {
-                          //   ionic.Platform.exitApp();
-                         }
-
-      });
+      }
+    }
+})
 
     })
 
