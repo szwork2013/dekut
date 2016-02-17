@@ -115,5 +115,6 @@ angular.module('app.register', ['lbServices', 'ionic'])
             $location.path('signin');
         };
 
+        $scope.selectables = [1,2,3,4,5];
 
     });
