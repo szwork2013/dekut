@@ -23,6 +23,48 @@
         if (User.getCachedCurrent() == null) {
             User.getCurrent();
         }
+        // add mob initialize here
+   // admob plugin here
+        if(window.plugins && window.plugins.AdMob) {
+            var admob_key = device.platform == "Android" ? "ca-app-pub-8427277104243864/6066974633" : "ca-app-pub-8427277104243864/6066974633";
+            var admob = window.plugins.AdMob;
+            admob.createBannerView(
+                {
+                    'publisherId': pub-8427277104243864,
+                    'adSize': admob.AD_SIZE.BANNER,
+                    'bannerAtTop': false
+                },
+                function() {
+                    admob.requestAd(
+                        { 'isTesting': false },
+                        function() {
+                            admob.showAd(true);
+                        },
+                        function() { console.log('failed to request ad'); }
+                    );
+                },
+                function() { console.log('failed to create banner view'); }
+            );
+        }
+        // admob pro plugin
+        var admobid = {};
+   if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
+       admobid = {
+           banner: 'ca-app-pub-8427277104243864/6066974633', // or DFP format "/6253334/dfp_example_ad"
+           interstitial: 'ca-app-pub-8427277104243864/6066974633'
+       };
+   } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
+       admobid = {
+           banner: 'ca-app-pub-8427277104243864/6066974633', // or DFP format "/6253334/dfp_example_ad"
+           interstitial: 'ca-app-pub-8427277104243864/6066974633'
+       };
+   } else { // for windows phone
+       admobid = {
+           banner: 'ca-app-pub-8427277104243864/6066974633', // or DFP format "/6253334/dfp_example_ad"
+           interstitial: 'ca-app-pub-8427277104243864/6066974633'
+       };
+   }
+
       });
 
     })
