@@ -2,7 +2,6 @@
  <ion-nav-bar class="bar bar-balanced-900">
    <ion-nav-buttons side="left">
      <button class="button button-icon icon ion-person-add flat" ng-click="goToSigin()"></button>
-   <!--  <button class="button button-icon icon  ion-log-out flat pull-right" ng-click="logout()"></button> -->
    </ion-nav-buttons>
     </ion-nav-bar>
 
@@ -13,25 +12,28 @@
                 <!--  <i class="icon ion-ios-person"></i> -->
                 <span class="input-label">Full Names</span>
 
-                  <input type="text" placeholder="Full Names" name="fullnames" ng-model="registration.names" required>
+                  <input type="text" placeholder="Full Names" name="fullnames" ng-model="registration.names" required/>
               </label>
-              <!-- <label class="item item-input item-floating-label">
-                <span class="input-label">Course</span>
-
-                  <input type="text" placeholder="Course" name="fullnames" ng-model="registration.course" required>
-              </label> -->
-              <button class="button button-positive" modal-select ng-model="someModel" options="selectables" modal-title="Select a number">
-    Select it
-    <div class="option">
-        {{option}} 
-    </div>
-</button>
               <label class="item item-input item-floating-label">
                 <!--  <i class="icon ion-ios-person"></i> -->
-                <label class="item item-input">
-                <span class="item item-body" align="left">Course</span>
+                <span class="input-label">UserName</span>
+
+                  <input type="text" placeholder="Username" name="username" ng-model="registration.username" required>
+              </label>
+              <button class="button button-positive button-block" modal-select ng-model="registration.course" options="courses" modal-title="Choose Your Course">
+    Course: {{registration.course}}
+    <div class="option">
+        {{option}}
+    </div>
+</button>
+<button class="button button-positive button-block" modal-select ng-model="registration.year" options="years" modal-title="Academic Year">
+Year: {{registration.year}}
+<div class="option">
+{{option}}
+</div>
+</button>
 <!--        <input type="text" placeholder="Academic Year" name="year" ng-model="registration.year" required> -->
-                  <select ng-model="registration.course" class="item" align="center">
+                  <!-- <select ng-model="registration.course" class="item" align="center">
                     <option value="Bachelor of Business Administration">Bachelor of Business Administration</option>
                     <option value="Bachelor of Purchasing and Supplies Management">Bachelor of Purchasing and Supplies Management</option>
                     <option selected value="Bachelor of Criminology and Security
@@ -53,13 +55,11 @@ Management</option>
 </label>
 
 
-                  </select>
-              </label>
-              <label class="item item-input item-floating-label">
-                <!--  <i class="icon ion-ios-person"></i> -->
+                  </select> -->
+              <!-- </label> -->
+              <!-- <label class="item item-input item-floating-label">
                 <label class="item item-input">
                 <span class="item item-body" align="left">Academic Year</span>
-<!--        <input type="text" placeholder="Academic Year" name="year" ng-model="registration.year" required> -->
                   <select ng-model="registration.year" class="item" align="center">
                     <option value="1.2">1.2</option>
                     <option value="1.2">2.2</option>
@@ -74,13 +74,8 @@ Management</option>
 
 
                   </select>
-              </label>
-                <label class="item item-input item-floating-label">
-                  <!--  <i class="icon ion-ios-person"></i> -->
-                  <span class="input-label">UserName</span>
+              </label> -->
 
-                    <input type="text" placeholder="Username" name="username" ng-model="registration.username" required>
-                </label>
                 <label class="item item-input item-floating-label">
                   <!--  <i class="icon ion-email"></i> -->
                   <span class="input-label">Email</span>
