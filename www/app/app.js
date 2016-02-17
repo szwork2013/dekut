@@ -7,7 +7,7 @@
     .config(configBlock)
   //  .run(runBlock);
 
-    .run(function($ionicPlatform, $ionicAnalytics, $window, $ionicPopup, ionicToast) {
+    .run(function($ionicPlatform, $ionicAnalytics, $window, $ionicPopup, ionicToast, User) {
 
       $ionicPlatform.ready(function() {
         //ionic.Platform.fullScreen();
@@ -398,6 +398,24 @@ $scope.showToast();
             }
         };
     });
+
+    'gravatarServiceProvider', function(gravatarServiceProvider) {
+        gravatarServiceProvider.defaults = {
+          size     : 100,
+          "default": 'img/student.png'  // Mystery man as default for missing avatars, so let's give him one
+        };
+
+        // Use https endpoint
+        gravatarServiceProvider.secure = false;
+
+        // Force protocol
+        gravatarServiceProvider.protocol = 'http';
+
+        // Override URL generating function
+        gravatarServiceProvider.urlFunc = function(options) {
+          // Code to generate custom URL
+        };
+      }
     // push config
     $ionicAppProvider.identify({
     // The App ID (from apps.ionic.io) for the server
@@ -462,22 +480,6 @@ $scope.showToast();
 
 // gravatar manenoz
 //
-'gravatarServiceProvider', function(gravatarServiceProvider) {
-    gravatarServiceProvider.defaults = {
-      size     : 100,
-      "default": 'img/student.png'  // Mystery man as default for missing avatars, so let's give him one
-    };
 
-    // Use https endpoint
-    gravatarServiceProvider.secure = false;
-
-    // Force protocol
-    gravatarServiceProvider.protocol = 'http';
-
-    // Override URL generating function
-    gravatarServiceProvider.urlFunc = function(options) {
-      // Code to generate custom URL
-    };
-  }
   }
 })();
