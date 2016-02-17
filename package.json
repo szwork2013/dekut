@@ -26,7 +26,8 @@
     "cordova-plugin-inappbrowser",
     "phonegap-plugin-push",
     "cordova-plugin-file-transfer",
-    "org.apache.cordova.statusbar"
+    "org.apache.cordova.statusbar",
+    "cordova-plugin-admobpro"
   ],
   "cordovaPlatforms": [
     "android"
