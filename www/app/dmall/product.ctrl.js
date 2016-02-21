@@ -38,6 +38,25 @@ Product
     function (err) {
 
     });
+    $scope.refresh = function () {
+      Product
+          .find({
+            filter: {
+            where: {
+              id: $stateParams.id
+            }
+          }
+        })
+          .$promise
+          .then(
+          function (res) {
+              $scope.product = res[0];
+
+          },
+          function (err) {
+
+          });
+    };
 //display modal for checkout
 // goto order url
 $scope.goToOrder = function () {

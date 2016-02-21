@@ -1,4 +1,7 @@
 <ion-view title="About DekutApp">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon icon  ion-android-chat flat pull-right" ng-click="FeedbackModal()"></button>
+  </ion-nav-buttons>
   <ion-content class="has-header">
 <ion-list>
   <ion-item class="item item-body">
@@ -12,21 +15,45 @@ About DekutApp
   </div> -->
 </div>
   </ion-item>
-</ion-list>
-<div class="item item-body">
   <div class="card">
-    <i class="icon ion-social-facebook">DekutApp
-  </div>
-  <div class="card item item-icon-right">
-    <i class="icon ion-social-twitter"></i>@dekutapp
-  </div>
-  <div class="card item item-icon-right">
-    <i class="icon ion-email"></i>dekutapp@gmail.com
-  </div>
+    <div class="list">
+<ion-item class="item item-body item-icon-right">
+DekutApp &nbsp
+<i class="icon ion-social-facebook"></i>
+
+</ion-item>
 </div>
+  </div>
+  <div class="card item">
+  Let's Be Friends
+  </div>
+  <div class="card">
+    <div class="list">
+<ion-item class="item item-body item-icon-right">
+@dekutapp &nbsp
+<i class="icon ion-social-twitter"></i>
+
+</ion-item>
+</div>
+  </div>
+  <div class="card">
+    <div class="list">
+<ion-item class="item item-body item-icon-right">
+dekutapp@gmail.com &nbsp
+<i class="icon ion-email"></i>
+
+</ion-item>
+</div>
+  </div>
+
+</ion-list>
+
   </ion-content>
   <button class="button button-energized-900 button-fab button-fab-bottom-right fab" ng-click="shareNative()">
-  <i class="icon ion-edit light"></i>
+  <i class="icon ion-android-share-alt light"></i>
+</button>
+<button class="button button-energized-900 button-fab button-fab-bottom-left fab" ng-click="FeedbackModal()">
+<i class="icon ion-android-chat light"></i>
 </button>
 
 </ion-view>
