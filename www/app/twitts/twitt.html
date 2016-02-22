@@ -8,7 +8,7 @@
         <div class="avatar">
         <img ng-src="{{twitt.avatar}}">
 </div>
-        <h2>{{tweet.ownerUsername}}</h2>
+        <h2>{{tweet.ownerNickname}}</h2>
         <p>{{tweet.content}}</p>
       </div>
     </div>
@@ -28,7 +28,7 @@
           <ion-list>
         <div ng-repeat="comment in comments.slice().reverse()" ng-if="comment.tweetId === tweet.id" class="item item-avatar" style="padding-top: 10px; padding-bottom:10px;">
             <img ng-src="{{comment.avatar}}">
-            <h2>{{comment.username}}<p class="date"><i class="icon ion-ios-clock"></i>{{comment.date | timeDistance}} Ago</p></h2>
+            <h2>{{comment.ownerNickname}}<p class="date"><i class="icon ion-ios-clock"></i>{{comment.date | timeDistance}} Ago</p></h2>
             <p>{{comment.content}}</p>
         </div>
       </ion-list>

@@ -74,6 +74,7 @@ $ionicModal.fromTemplateUrl('app/twitts/newtweet.html', {
         $scope.newTweet.date = new Date().toJSON();
         $scope.newTweet.ownerId = $scope.currentUser.id;
         $scope.newTweet.ownerUsername = $scope.currentUser.username;
+        $scope.newTweet.ownerNickname = $scope.currentUser.nickname;
         Tweet.create($scope.newTweet,
             function (res) {
                 delete $scope.newTweet;

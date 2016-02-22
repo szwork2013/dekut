@@ -9,3 +9,12 @@
          font-weight: 100;
          line-height: 1;
      }
+p {
+  text-transform: lowercase;
+}
+p:first-letter {
+  text-transform: uppercase;
+}
+#test {
+  text-transform: lowercase;
+}

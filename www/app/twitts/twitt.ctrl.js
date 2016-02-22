@@ -146,6 +146,7 @@ Tweet
         $scope.newComment.date = new Date().toJSON();
         $scope.newComment.ownerId = $scope.currentUser.id;
         $scope.newComment.ownerUsername = $scope.currentUser.username;
+        $scope.newComment.ownerNickname = $scope.currentUser.nickname;
         $scope.newComment.tweetId = $scope.tweet.id;
         Comment.create($scope.newComment,
             function (res) {
