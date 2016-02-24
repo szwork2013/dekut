@@ -47,31 +47,7 @@
                 function() { console.log('failed to create banner view'); }
             );
         }
-        // admob pro plugin
-        var admobid = {};
-   if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
-       admobid = {
-           banner: 'ca-app-pub-8427277104243864/6066974633', // or DFP format "/6253334/dfp_example_ad"
-           interstitial: 'ca-app-pub-8427277104243864/6066974633'
-       };
-   } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
-       admobid = {
-           banner: 'ca-app-pub-8427277104243864/6066974633', // or DFP format "/6253334/dfp_example_ad"
-           interstitial: 'ca-app-pub-8427277104243864/6066974633'
-       };
-   } else { // for windows phone
-       admobid = {
-           banner: 'ca-app-pub-8427277104243864/6066974633', // or DFP format "/6253334/dfp_example_ad"
-           interstitial: 'ca-app-pub-8427277104243864/6066974633'
-       };
-   }
-   // display bottom banner
-   if(window.AdMob) AdMob.createBanner( {
-     adId:admobid.banner,
-     position:AdMob.AD_POSITION.BOTTOM_CENTER,
-     autoShow:true}
-   );
-   $scope.showToast = function(){
+         $scope.showToast = function(){
      ionicToast.show('This App Needs Internet Connection', 'bottom', false, 2500);
    };
    $scope.showToast2 = function(){
