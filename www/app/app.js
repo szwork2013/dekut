@@ -12,11 +12,10 @@
       $ionicPlatform.ready(function() {
         //ionic.Platform.fullScreen();
         $ionicAnalytics.register();
-        if(window.cordova && window.cordova.plugins.Keyboard) {
-          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+          cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
         }
-        if(window.StatusBar) {
-          // org.apache.cordova.statusbar required
+        if (window.StatusBar) {
           StatusBar.styleDefault();
         }
 
@@ -75,6 +74,39 @@ $scope.showToast();
 
       }
     }
+    // Notificatons trigger
+
+    		$rootScope.$on('$cordovaLocalNotification:schedule',
+    			function (event, notification, state) {
+    				console.log("SCHEDULE");
+    				console.log('event', event);
+    				console.log('notification', notification);
+    				console.log('state', state);
+    			});
+
+    		$rootScope.$on('$cordovaLocalNotification:trigger',
+    			function (event, notification, state) {
+    				console.log("TRIGGER");
+    				console.log('event', event);
+    				console.log('notification', notification);
+    				console.log('state', state);
+    			});
+
+    		$rootScope.$on('$cordovaLocalNotification:update',
+    			function (event, notification, state) {
+    				console.log('UPDATE');
+    				console.log('event', event);
+    				console.log('notification', notification);
+    				console.log('state', state);
+    			});
+
+    		$rootScope.$on('$cordovaLocalNotification:cancel',
+    			function (event, notification, state) {
+    				console.log('CANCEL');
+    				console.log('event', event);
+    				console.log('notification', notification);
+    				console.log('state', state);
+    			});
 })
 
     })

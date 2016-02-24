@@ -62,6 +62,9 @@
           console.log(err)
           });
       };
+
+      //wrap it up in $ionicPlatform
+      //
       $scope.scheduleInstantNotification = function () {
       $cordovaLocalNotification.schedule({
       id: 1,

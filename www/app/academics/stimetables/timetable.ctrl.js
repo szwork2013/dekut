@@ -35,6 +35,10 @@ $scope.shareNative = function() {
         else console.log("Share plugin not available");
 }
 // Instant Notification
+// wrap it up in $ionicPlatform
+//
+$ionicPlatform.ready(function () {
+
 $scope.scheduleInstantNotification = function () {
 $cordovaLocalNotification.schedule({
 id: 1,
@@ -79,5 +83,7 @@ $scope.EveryMorning = function () {
 // call reminder functions (buttonless)
 $scope.ReminderTT();
 $scope.EveryMorning()
+});
+//end it here
   }
 })();
