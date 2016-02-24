@@ -45,7 +45,7 @@ alert("Instant Notification set");
 });
 };
 // five seconds Notification
-$scope.remindertt = function () {
+$scope.ReminderTT = function () {
   var now = new Date().getTime();
 //  var _5SecondsFromNow = new Date(now + 5000);
   var _when = $scope.schooltt.timestart;
@@ -56,7 +56,9 @@ $scope.remindertt = function () {
       id: 2,
       date: _time,
       text: 'You Have An Upcoming Lecture' +  $scope.schooltt.unit + 'At' + $scope.schooltt.location + ' ',
-      title: 'Lecture'
+      title: 'Lecture',
+      icon: "http://my.domain.de/avatar/user#id=123"
+
   }).then(function () {
       alert("TimeTables Notifications Set");
   });
@@ -74,7 +76,8 @@ $scope.EveryMorning = function () {
     console.log('Every Day Notifications Set');
     });
 };
-
-
+// call reminder functions (buttonless)
+$scope.ReminderTT();
+$scope.EveryMorning()
   }
 })();
