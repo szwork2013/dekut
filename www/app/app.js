@@ -24,6 +24,8 @@
         if (User.getCachedCurrent() == null) {
             User.getCurrent();
         }
+        if (ionic.Platform.isWebView()) {
+         }
         // add mob initialize here
    // admob plugin here
         if(window.plugins && window.plugins.AdMob) {

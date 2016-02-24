@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('PTimetablesCtrl', PTimetablesCtrl);
 
-  function PTimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout, ionicToast){
+  function PTimetablesCtrl($scope, User, Personaltt, $ionicModal, $timeout, ionicToast, $cordovaLocalNotification, $ionicPlatform){
     $scope.currentUser = User.getCurrent();
     $scope.personaltt = {};
 
@@ -62,6 +62,29 @@
           console.log(err)
           });
       };
+      $scope.scheduleInstantNotification = function () {
+      $cordovaLocalNotification.schedule({
+      id: 1,
+      text: 'Instant Notification',
+      title: 'Instant'
+    }).then(function () {
+      alert("Instant Notification set");
+    });
+  };
+  // five seconds Notification
+  $scope.FiveSeconds = function () {
+    var now = new Date().getTime();
+    var _5SecondsFromNow = new Date(now + 5000);
+
+    $cordovaLocalNotification.schedule({
+        id: 2,
+        date: _5SecondsFromNow,
+        text: 'Notification After 5 Seconds Has Been Triggered',
+        title: 'After 5 Seconds'
+    }).then(function () {
+        alert("Notification After 5 seconds set");
+    });
+};
 
 
 

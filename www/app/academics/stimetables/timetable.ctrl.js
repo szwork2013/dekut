@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('STimetableCtrl', STimetableCtrl, ['lbServices', 'ionic', 'STimetablesCtrl']);
 
-  function STimetableCtrl($scope, $stateParams, $ionicModal, User, Schooltt, $location){
+  function STimetableCtrl($scope, $stateParams, $ionicModal, User, Schooltt, $location, $cordovaLocalNotification, $ionicPlatform){
 
 Schooltt
     .find({filter: {where: {id: $stateParams.id}}})
@@ -34,6 +34,31 @@ $scope.shareNative = function() {
         }
         else console.log("Share plugin not available");
 }
+// Instant Notification
+$scope.scheduleInstantNotification = function () {
+$cordovaLocalNotification.schedule({
+id: 1,
+text: 'Instant Notification',
+title: 'Instant'
+}).then(function () {
+alert("Instant Notification set");
+});
+};
+// five seconds Notification
+$scope.remindertt = function () {
+  var now = new Date().getTime();
+  var _5SecondsFromNow = new Date(now + 5000);
+  var _when = $scope.schooltt.title
+
+  $cordovaLocalNotification.schedule({
+      id: 2,
+      date: _5SecondsFromNow,
+      text: 'Notification After 5 Seconds Has Been Triggered',
+      title: 'After 5 Seconds'
+  }).then(function () {
+      alert("Notification After 5 seconds set");
+  });
+};
 
 
   }
