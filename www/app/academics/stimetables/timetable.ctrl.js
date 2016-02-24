@@ -23,7 +23,7 @@ Schooltt
 // social sharing
 $scope.shareNative = function() {
         if (window.plugins && window.plugins.socialsharing) {
-            window.plugins.socialsharing.share("Checkout Class TimeTable in DekutApp: " + $scope.schooltt.title + ",By " + $scope.notice.author + ".",
+            window.plugins.socialsharing.share("Checkout Class TimeTable in DekutApp: " + $scope.schooltt.unit + ",By " + $scope.schooltt.location + ".",
                 '', null, "http://twitter.com/DekutApp",
                 function() {
                     console.log("Success")
@@ -47,17 +47,32 @@ alert("Instant Notification set");
 // five seconds Notification
 $scope.remindertt = function () {
   var now = new Date().getTime();
-  var _5SecondsFromNow = new Date(now + 5000);
-  var _when = $scope.schooltt.title
+//  var _5SecondsFromNow = new Date(now + 5000);
+  var _when = $scope.schooltt.timestart;
+  // 30 minutes reminder
+  var _time = $scope.schooltt.timestart - 1800;
 
   $cordovaLocalNotification.schedule({
       id: 2,
-      date: _5SecondsFromNow,
-      text: 'Notification After 5 Seconds Has Been Triggered',
-      title: 'After 5 Seconds'
+      date: _time,
+      text: 'You Have An Upcoming Lecture' +  $scope.schooltt.unit + 'At' + $scope.schooltt.location + ' ',
+      title: 'Lecture'
   }).then(function () {
-      alert("Notification After 5 seconds set");
+      alert("TimeTables Notifications Set");
   });
+};
+
+// show all Notification TimeTables for the whole day
+$scope.EveryMorning = function () {
+    $cordovaLocalNotification.schedule({
+    id: 3,
+    title: 'Your Lectures Today are',
+    text: ' > ' +  $scope.schooltt.unit + 'At' + $scope.schooltt.location + ' ',
+    firstAt: tomorrow_at_8_am,
+    every: "day"
+    }).then(function (result) {
+    console.log('Every Day Notifications Set');
+    });
 };
 
 
