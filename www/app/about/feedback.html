@@ -1,0 +1,23 @@
+<ion-modal-view class="ionic">
+    <header class="bar bar-header bar-positive flat">
+<h1 class="title fab-left">Feedback</h1>
+<button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+</header>
+<ion-content class="padding has-header">
+<form novalidate="novalidate" name="feedbackForm">
+<label class="item item-input item-floating-label">
+        <span class="input-label">FeedBack</span>
+    <input type="text" placeholder="What Do You Think About The App?" ng-model="newFeedback.content" required/>
+    </label>
+    <label class="item item-input item-floating-label">
+            <span class="input-label">Type</span>
+        <input type="text" placeholder="Type? (Bug/Improvement/Suggestion)" ng-model="newFeedback.type"/>
+        </label>
+<button ng-disabled="!feedbackForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
+            data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveFeedback()">
+Send FeedBack
+        </button>
+</form>
+
+</ion-content>
+</ion-modal-view>

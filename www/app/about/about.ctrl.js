@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('AboutCtrl', AboutCtrl);
 
-  function AboutCtrl($state, $scope, $ionicHistory, Storage, User){
+  function AboutCtrl($state, $scope, $ionicHistory, Storage, User, Feedback, $ionicModal){
     $scope.currentUser = User.getCurrent();
     // social sharing
     $scope.shareNative = function() {
@@ -20,5 +20,46 @@
             else console.log("Share plugin not available");
     }
 
+    // modal for Feedback
+    $ionicModal.fromTemplateUrl('app/about/feedback.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.FeedbackModal = function () {
+            $scope.modal.show();
+
+        };
+        // Cleanup the modal when we're done with it
+        $scope.$on('$destroy', function () {
+            $scope.modal.remove();
+        });
+
+     $scope.close = function() {
+        $scope.modal.hide();
+    };
+
+// feedback form
+$scope.newFeedback = {};
+// clear form after being filled
+$scope.content = '';
+
+$scope.saveFeedback = function() {
+  $scope.close();
+
+   Feedback
+     .create({
+       content: $scope.newFeedback.content,
+       usernames: $scope.currentUser.names,
+       userid: $scope.currentUser.id,
+       type: $scope.newFeedback.type
+     })
+     .$promise
+     .then(function() {
+       $state.go('about');
+     });
+ };
   }
 })();

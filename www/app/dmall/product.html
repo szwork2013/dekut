@@ -11,7 +11,7 @@
     </ion-refresher>
        <div class="hero has-mask">
      <!-- <img class="full-image" src="img/rainynairobi.jpg"> -->
-   <img class="hero has-mask" ng-src={{product.images[0]}}>
+   <img class="hero has-mask" ng-src={{product.image}}>
  </div>
       <div class="mid-bar dark-bg z1 padding">
          <h3> {{product.name}} </h3>
@@ -28,11 +28,12 @@
     <div class="double-padding">
       <div class="card">
         <div class="item item-body">
+          <p>Seller Contact:   <i class="icon ion-ios-telephone"></i><strong>  {{product.contact}}  </strong></p>
 
-   <p>Payment Method:   <i class="icon ion-cash"></i><strong>    On Delivery</strong></p>
+   <p>Payment Method:   <i class="icon ion-cash"></i><strong>  {{product.payment}}  </strong></p>
 <!--   <p class="subdued">To:  <i class="icon ion-ios-clock-outline"></i><strong>  {{notice.endDate | amCalendar}}</strong></p> -->
 
-<p>Type Of Delivery:   <i class="icon ion-android-bus"></i><strong>   <!--{{product.deliverytype}} --> Free </strong></p>
+<p>Type Of Delivery:   <i class="icon ion-android-bus"></i><strong>   {{product.deliverytype}}</strong></p>
     </div>
   </div>
   </div>
