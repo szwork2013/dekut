@@ -14,7 +14,7 @@
    </div>
  <div ng-if="results.length > 0" class="list">
      <ion-list>
-     <div class="list card" ng-repeat="result in results.slice().reverse()">
+     <div class="list card" ng-repeat="result in results.slice().reverse()" ng-if="results.studentregno === currentUser.regno">
 
        <div class="item"  ui-sref="app.result({id: result.id})">
          <h2>{{result.studentname}}</h2>
