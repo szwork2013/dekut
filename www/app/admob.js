@@ -34,8 +34,8 @@ function initApp() {
         bgColor: 'black'
     } );
 
-    AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        autoShow: true
-    });
+    // AdMob.prepareInterstitial({
+    //     adId: admobid.interstitial,
+    //     autoShow: true
+    // });
 }
