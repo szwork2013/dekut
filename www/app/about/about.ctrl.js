@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('AboutCtrl', AboutCtrl);
 
-  function AboutCtrl($state, $scope, $ionicHistory, Storage, User, Feedback, $ionicModal){
+  function AboutCtrl($state, $scope, $ionicHistory, Storage, User, Feedback, $ionicModal, ionicToast){
     $scope.currentUser = User.getCurrent();
     // social sharing
     $scope.shareNative = function() {
@@ -20,6 +20,10 @@
             else console.log("Share plugin not available");
     }
 
+// toasts are sweet
+$scope.showToast = function(){
+  ionicToast.show('Thanks, your feedback is highly appreciated.', 'bottom', false, 2500);
+};
     // modal for Feedback
     $ionicModal.fromTemplateUrl('app/about/feedback.html', {
             scope: $scope,
@@ -48,7 +52,7 @@ $scope.content = '';
 
 $scope.saveFeedback = function() {
   $scope.close();
-
+  $scope.showToast();
    Feedback
      .create({
        content: $scope.newFeedback.content,
