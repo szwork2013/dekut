@@ -3,7 +3,7 @@
   angular.module('app')
     .controller('STimetableCtrl', STimetableCtrl, ['lbServices', 'ionic', 'STimetablesCtrl']);
 
-  function STimetableCtrl($scope, $stateParams, $ionicModal, User, Schooltt, $location, $cordovaLocalNotification, $ionicPlatform){
+  function STimetableCtrl($scope, $stateParams, $ionicModal, User, Schooltt, $location, $cordovaLocalNotification, $ionicPlatform, $rootScope){
 
 Schooltt
     .find({filter: {where: {id: $stateParams.id}}})
@@ -81,8 +81,8 @@ $scope.EveryMorning = function () {
     });
 };
 // call reminder functions (buttonless)
-$scope.ReminderTT();
-$scope.EveryMorning()
+// $scope.ReminderTT();
+// $scope.EveryMorning()
 });
 //end it here
   }
