@@ -3,12 +3,16 @@
   angular.module('app')
     .controller('ResultsCtrl', ResultsCtrl);
 
-  function ResultsCtrl($scope, User, $state, Result, $location){
+  function ResultsCtrl($scope, User, $state, Result, $location, $rootScope){
     $scope.currentUser = User.getCurrent();
 
   // GET the all results without filtering
   $scope.results = Result.find({
-
+    // filter: {
+    //   where: {
+    //     studentregno: $scope.currentUser.id
+    //   }
+    // }
   });
 
   $scope.getStyle = function(){
