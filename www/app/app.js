@@ -383,7 +383,7 @@ $scope.showToast();
       }
     });
 
-    $urlRouterProvider.otherwise('/loading');
+    $urlRouterProvider.otherwise('/intro');
 
     // catch Angular errors
     $provide.decorator('$exceptionHandler', ['$delegate', function($delegate){
