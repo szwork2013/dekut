@@ -21,6 +21,7 @@
     "ionic-content-banner": "~1.0.1",
     "angular-gravatar": "~0.4.1",
     "ionic-datepicker": "~0.9.0",
-    "ionic-modal-select": "~1.1.2"
+    "ionic-modal-select": "~1.1.2",
+    "angular-filter": "~0.5.8"
   }
 }
