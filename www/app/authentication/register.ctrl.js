@@ -122,7 +122,7 @@ angular.module('app.register', ['lbServices', 'ionic'])
            'BSc in Geospatial Information Science', 'BSc. In Geomatics and Geospatial Information Science', 'BSc. Nursing'
         ];
         $scope.years = [
-          1.1,1.2,2.1,3.1,4.1,4.2,5.1,5.2, 'Masters'
+          1.1,1.2,2.1,3.1,3.2,4.1,4.2,5.1,5.2, 'Masters'
         ];
 
     });

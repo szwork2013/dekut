@@ -16,7 +16,9 @@
           <div class="hero has-mask " style="background-image: url('img/nairobae.jpg');">
               <div class="content" ng-controller="ProfileCtrl">
             <!--      <div class="avatar" style="background-image: url('http://ionicframework.com/img/docs/barrett.jpg');"></div> -->
-                  <img class="avatar" gravatar-src="currentUser.email" gravatar-size="100">
+                  <!-- <img class="avatar" gravatar-src="currentUser.email" gravatar-size="100"> -->
+                  <img src="img/student.png">
+
                   <h3><a class="light">{{currentUser.names}}</a></h3>
                   <h4>{{currentUser.email}}</h4>
                 <!--  <p>User ID: {{currentUser.id}} </p> -->
@@ -49,6 +51,10 @@
 <div href="#" class="item item-icon-left">
   <i class="icon ion-university"></i>
 Course: <h3>{{currentUser.course}} </h3>
+</div>
+<div href="#" class="item item-icon-left">
+  <i class="icon ion-pin"></i>
+Reg. No: <h3>{{currentUser.regno}} </h3>
 </div>
 <div href="#" class="item item-icon-left">
   <i class="icon ion-ios-time"></i>

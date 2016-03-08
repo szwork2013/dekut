@@ -5,9 +5,9 @@
   <ion-content>
     <div class="list card">
       <div class="item item-avatar">
-        <div class="avatar">
-        <img ng-src="{{twitt.avatar}}">
-</div>
+        <!-- <img ng-src="{{twitt.avatar}}"> -->
+        <img src="img/student.png">
+
         <h2>{{tweet.ownerNickname}}</h2>
         <p>{{tweet.content}}</p>
       </div>
@@ -27,7 +27,9 @@
       </ion-refresher>
           <ion-list>
         <div ng-repeat="comment in comments.slice().reverse()" ng-if="comment.tweetId === tweet.id" class="item item-avatar" style="padding-top: 10px; padding-bottom:10px;">
-            <img ng-src="{{comment.avatar}}">
+            <!-- <img ng-src="{{comment.avatar}}"> -->
+            <img src="img/student.png">
+
             <h2>{{comment.ownerNickname}}<p class="date"><i class="icon ion-ios-clock"></i>{{comment.date | timeDistance}} Ago</p></h2>
             <p>{{comment.content}}</p>
         </div>

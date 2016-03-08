@@ -29,7 +29,8 @@
       <div class="list card" ng-repeat="tweet in tweets.slice().reverse()">
 
         <div class="item item-avatar"  ui-sref="app.twitt({id: tweet.id})">
-          <img ng-src="{{item.avatar}}">
+          <!-- <img ng-src="{{item.avatar}}"> -->
+          <img src="img/student.png">
           <h2>{{tweet.ownerNickname}}</h2>
           <p><i class="icon ion-ios-clock"></i> {{tweet.date | timeDistance}} Ago</p>
 
