@@ -118,7 +118,11 @@ $scope.showToast();
       template: '<ion-spinner style="text-align: center; margin-top: 50%;"></ion-spinner>',
       controller: 'LoadingCtrl'
     })
-
+// into logics
+.state('intro', {
+  url: '/intro',
+  templateUrl: 'app/about/intro.html'
+})
     // auth logics
     .state('signin', {
       url: '/signin',
