@@ -199,8 +199,8 @@ $scope.showToast();
         }
       }
     })
-    .state('app.profiles', {
-      url: '/profiles',
+    .state('app.users', {
+      url: '/users',
       views: {
         'menuContent': {
           templateUrl: 'app/authentication/profile/profile.html',
@@ -208,8 +208,8 @@ $scope.showToast();
         }
       }
     })
-    .state('app.profiled', {
-      url: '/profile/:id',
+    .state('app.user', {
+      url: '/user/:id',
       views: {
         'menuContent': {
           templateUrl: 'app/authentication/profile/profile.html',
