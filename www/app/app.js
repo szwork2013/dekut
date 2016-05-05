@@ -189,6 +189,34 @@ $scope.showToast();
         }
       }
     })
+    //edit Profile
+    .state('app.profile', {
+      url: '/profile/:id/edit',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/authentication/profile/profile.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
+    .state('app.profiles', {
+      url: '/profiles',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/authentication/profile/profile.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
+    .state('app.profiled', {
+      url: '/profile/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'app/authentication/profile/profile.html',
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
     // academics
     .state('app.ptimetables', {
       url: '/ptimetables',
@@ -406,7 +434,7 @@ $scope.showToast();
                 console.log("Redirect");
                 if (rejection.status == 401 && $location.path() !== '/signin' && $location.path() !== '/register') {
                     $location.nextAfterLogin = $location.path();
-                    $location.path('#/app/twitts');
+                    $state.go('app.twitts');
                 }
                 return $q.reject(rejection);
             }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.dekutapp.dekutapp" version="2.0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.dekutapp.dekutapp" version="3.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>DekutApp</name>
   <description>
-      Student Companion App for Dedan Kimathi University
+      A New and Better To Live Around Dedan Kimathi University
 </description>
   <author email="denzjoseph@gmail.com" href="http://denzel.xyz/">Denzel Wamburu</author>
   <content src="index.html"/>
